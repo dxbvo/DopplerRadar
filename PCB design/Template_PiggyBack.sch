@@ -11115,9 +11115,9 @@ Copy components that are needed more than once.</text>
 <attribute name="NAME" x="65.024" y="-129.159" size="1.778" layer="95"/>
 <attribute name="VALUE" x="65.024" y="-134.239" size="1.778" layer="96"/>
 </instance>
-<instance part="R15" gate="G$1" x="81.28" y="-119.38" smashed="yes" rot="R180">
-<attribute name="NAME" x="85.09" y="-120.8786" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="85.09" y="-116.078" size="1.778" layer="96" rot="R180"/>
+<instance part="R15" gate="G$1" x="58.42" y="-119.38" smashed="yes" rot="R180">
+<attribute name="NAME" x="62.23" y="-120.8786" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="62.23" y="-116.078" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="GND1" gate="1" x="71.12" y="-137.16" smashed="yes">
 <attribute name="VALUE" x="68.58" y="-139.7" size="1.778" layer="96"/>
@@ -11290,8 +11290,7 @@ Copy components that are needed more than once.</text>
 </segment>
 <segment>
 <pinref part="R15" gate="G$1" pin="1"/>
-<wire x1="86.36" y1="-119.38" x2="96.52" y2="-119.38" width="0.1524" layer="91"/>
-<label x="96.52" y="-121.92" size="1.778" layer="95"/>
+<wire x1="63.5" y1="-119.38" x2="96.52" y2="-119.38" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="PE7_" class="0">
@@ -11503,11 +11502,6 @@ Copy components that are needed more than once.</text>
 <segment>
 <pinref part="C17" gate="G$1" pin="1"/>
 <wire x1="71.12" y1="-127" x2="71.12" y2="-119.38" width="0.1524" layer="91"/>
-<pinref part="R15" gate="G$1" pin="2"/>
-<wire x1="71.12" y1="-119.38" x2="76.2" y2="-119.38" width="0.1524" layer="91"/>
-<wire x1="71.12" y1="-119.38" x2="60.96" y2="-119.38" width="0.1524" layer="91"/>
-<junction x="71.12" y="-119.38"/>
-<label x="55.88" y="-119.38" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="+3.3V_FROM_UC" class="0">
