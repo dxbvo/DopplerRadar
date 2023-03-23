@@ -11258,20 +11258,6 @@ Copy components that are needed more than once.</text>
 <wire x1="35.56" y1="86.36" x2="33.02" y2="86.36" width="0.1524" layer="91"/>
 <label x="27.94" y="86.36" size="1.778" layer="95"/>
 </segment>
-</net>
-<net name="PC3" class="0">
-<segment>
-<pinref part="J2" gate="G$1" pin="8"/>
-<wire x1="35.56" y1="83.82" x2="33.02" y2="83.82" width="0.1524" layer="91"/>
-<label x="27.94" y="83.82" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="PA5" class="0">
-<segment>
-<pinref part="J2" gate="G$1" pin="11"/>
-<wire x1="35.56" y1="76.2" x2="33.02" y2="76.2" width="0.1524" layer="91"/>
-<label x="27.94" y="76.2" size="1.778" layer="95"/>
-</segment>
 <segment>
 <pinref part="R6" gate="G$1" pin="2"/>
 <wire x1="254" y1="-66.04" x2="259.08" y2="-66.04" width="0.1524" layer="91"/>
@@ -11279,6 +11265,28 @@ Copy components that are needed more than once.</text>
 <pinref part="TP4" gate="G$1" pin="TP"/>
 <wire x1="259.08" y1="-66.04" x2="264.16" y2="-66.04" width="0.1524" layer="91"/>
 <junction x="259.08" y="-66.04"/>
+</segment>
+</net>
+<net name="PC3" class="0">
+<segment>
+<pinref part="J2" gate="G$1" pin="8"/>
+<wire x1="35.56" y1="83.82" x2="33.02" y2="83.82" width="0.1524" layer="91"/>
+<label x="27.94" y="83.82" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R12" gate="G$1" pin="2"/>
+<wire x1="256.54" y1="-205.74" x2="261.62" y2="-205.74" width="0.1524" layer="91"/>
+<pinref part="TP3" gate="G$1" pin="TP"/>
+<wire x1="261.62" y1="-205.74" x2="266.7" y2="-205.74" width="0.1524" layer="91"/>
+<junction x="261.62" y="-205.74"/>
+<label x="269.24" y="-205.74" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PA5" class="0">
+<segment>
+<pinref part="J2" gate="G$1" pin="11"/>
+<wire x1="35.56" y1="76.2" x2="33.02" y2="76.2" width="0.1524" layer="91"/>
+<label x="27.94" y="76.2" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="R15" gate="G$1" pin="1"/>
@@ -11762,16 +11770,6 @@ Copy components that are needed more than once.</text>
 <pinref part="R11" gate="G$1" pin="1"/>
 <junction x="157.48" y="-238.76"/>
 <wire x1="157.48" y1="-238.76" x2="157.48" y2="-246.38" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="PA4" class="0">
-<segment>
-<pinref part="R12" gate="G$1" pin="2"/>
-<wire x1="256.54" y1="-205.74" x2="261.62" y2="-205.74" width="0.1524" layer="91"/>
-<pinref part="TP3" gate="G$1" pin="TP"/>
-<wire x1="261.62" y1="-205.74" x2="266.7" y2="-205.74" width="0.1524" layer="91"/>
-<junction x="261.62" y="-205.74"/>
-<label x="269.24" y="-205.74" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>

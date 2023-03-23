@@ -155,7 +155,7 @@
 <layer number="255" name="routoute" color="7" fill="1" visible="yes" active="yes"/>
 </layers>
 <board>
-<fusionsync huburn="a.YnVzaW5lc3M6c3R1ZGVudHM1MjQ1NQ" projecturn="a.YnVzaW5lc3M6c3R1ZGVudHM1MjQ1NSNEMjAyMzAzMTU2MjA4NTg5NzY" f3durn="urn:adsk.wipprod:dm.lineage:P7s-F4vPSu64QmUG7M5eEA" pcbguid="" lastpulledtime="" lastsyncedchangeguid="" latestrevisionid="" lastsyncedrevisionid="" lastboardhashguid="" lastpushedtime="" linktopcb3d="true"/>
+<fusionsync huburn="a.YnVzaW5lc3M6c3R1ZGVudHM1MjQ1NQ" projecturn="a.YnVzaW5lc3M6c3R1ZGVudHM1MjQ1NSNEMjAyMzAzMTU2MjA4NTg5NzY" f3durn="urn:adsk.wipprod:dm.lineage:P7s-F4vPSu64QmUG7M5eEA" pcbguid="" lastpulledtime="" lastsyncedchangeguid="" latestrevisionid="" lastsyncedrevisionid="" lastboardhashguid="" lastpushedtime="" linktopcb3d="false"/>
 <plain>
 <wire x1="0" y1="0" x2="63.48" y2="0" width="0" layer="20"/>
 <wire x1="63.48" y1="0" x2="63.48" y2="88.57" width="0" layer="20"/>
@@ -2393,18 +2393,22 @@ Your Eurocircuits Team
 </signal>
 <signal name="PC1_">
 <contactref element="J2" pad="7"/>
+<contactref element="R6" pad="2"/>
+<contactref element="TP4" pad="TP"/>
+<wire x1="39.37" y1="17.78" x2="49.85" y2="57.15" width="0" layer="19" extent="1-1"/>
+<wire x1="7.62" y1="68.58" x2="49.85" y2="57.15" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PC3">
 <contactref element="J2" pad="8"/>
+<contactref element="R12" pad="2"/>
+<contactref element="TP3" pad="TP"/>
+<wire x1="11.43" y1="43.18" x2="7.62" y2="66.04" width="0" layer="19" extent="1-1"/>
+<wire x1="17.46" y1="43.18" x2="11.43" y2="43.18" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PA5">
 <contactref element="J2" pad="11"/>
-<contactref element="R6" pad="2"/>
-<contactref element="TP4" pad="TP"/>
 <contactref element="R15" pad="1"/>
-<wire x1="39.37" y1="17.78" x2="49.85" y2="57.15" width="0" layer="19" extent="1-1"/>
-<wire x1="35.24" y1="17.78" x2="39.37" y2="17.78" width="0" layer="19" extent="1-1"/>
-<wire x1="7.62" y1="58.42" x2="49.85" y2="57.15" width="0" layer="19" extent="1-1"/>
+<wire x1="35.24" y1="17.78" x2="7.62" y2="58.42" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PE7_">
 <contactref element="J2" pad="19"/>
@@ -2635,11 +2639,6 @@ Your Eurocircuits Team
 <contactref element="C14" pad="2"/>
 <contactref element="R11" pad="1"/>
 <wire x1="28.89" y1="24.13" x2="36.51" y2="29.21" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="PA4">
-<contactref element="R12" pad="2"/>
-<contactref element="TP3" pad="TP"/>
-<wire x1="11.43" y1="43.18" x2="17.46" y2="43.18" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
