@@ -1954,7 +1954,7 @@ Your Eurocircuits Team
 <param name="Efforts" value="2"/>
 <param name="TopRouterVariant" value="1"/>
 <param name="tpViaShape" value="round"/>
-<param name="PrefDir.1" value="*"/>
+<param name="PrefDir.1" value="a"/>
 <param name="PrefDir.2" value="0"/>
 <param name="PrefDir.3" value="0"/>
 <param name="PrefDir.4" value="0"/>
@@ -1969,7 +1969,7 @@ Your Eurocircuits Team
 <param name="PrefDir.13" value="0"/>
 <param name="PrefDir.14" value="0"/>
 <param name="PrefDir.15" value="0"/>
-<param name="PrefDir.16" value="*"/>
+<param name="PrefDir.16" value="a"/>
 <param name="cfVia" value="90"/>
 <param name="cfNonPref" value="5"/>
 <param name="cfChangeDir" value="2"/>
@@ -2735,11 +2735,15 @@ Your Eurocircuits Team
 <contactref element="R1" pad="2"/>
 <contactref element="IC1" pad="3"/>
 <wire x1="14.333446875" y1="66.81034375" x2="13.97" y2="65.72" width="0.15" layer="1"/>
-<wire x1="14.333446875" y1="66.81034375" x2="13.97" y2="70.99" width="0.15" layer="1"/>
+<wire x1="14.333446875" y1="66.81034375" x2="14.326209375" y2="66.893575" width="0.15" layer="1"/>
+<wire x1="14.326209375" y1="66.893575" x2="13.97" y2="70.99" width="0.15" layer="1"/>
 <wire x1="22.75" y1="66.75" x2="22.75" y2="65.375" width="0.15" layer="1"/>
-<wire x1="15.25" y1="66.75" x2="22.75" y2="66.75" width="0.15" layer="1"/>
+<wire x1="15.25" y1="66.75" x2="15.3" y2="66.75" width="0.15" layer="1"/>
+<wire x1="15.3" y1="66.75" x2="22.75" y2="66.75" width="0.15" layer="1"/>
 <wire x1="22.75" y1="65.375" x2="22.86" y2="65.345" width="0.15" layer="1"/>
-<wire x1="13.97" y1="65.72" x2="15.25" y2="66.75" width="0" layer="19" extent="1-1"/>
+<wire x1="15.15" y1="66.9" x2="14.4" y2="66.9" width="0.15" layer="1"/>
+<wire x1="15.3" y1="66.75" x2="15.15" y2="66.9" width="0.15" layer="1"/>
+<wire x1="14.4" y1="66.9" x2="14.326209375" y2="66.893575" width="0.15" layer="1"/>
 </signal>
 <signal name="N$5">
 <contactref element="R2" pad="2"/>

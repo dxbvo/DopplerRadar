@@ -155,7 +155,7 @@
 <layer number="255" name="routoute" color="7" fill="1" visible="yes" active="yes"/>
 </layers>
 <board>
-<fusionsync huburn="a.YnVzaW5lc3M6c3R1ZGVudHM1MjQ1NQ" projecturn="a.YnVzaW5lc3M6c3R1ZGVudHM1MjQ1NSNEMjAyMzAzMTU2MjA4NTg5NzY" f3durn="urn:adsk.wipprod:dm.lineage:P7s-F4vPSu64QmUG7M5eEA" pcbguid="" lastpulledtime="" lastsyncedchangeguid="" latestrevisionid="" lastsyncedrevisionid="" lastboardhashguid="" lastpushedtime="" linktopcb3d="false"/>
+<fusionsync huburn="a.YnVzaW5lc3M6c3R1ZGVudHM1MjQ1NQ" projecturn="a.YnVzaW5lc3M6c3R1ZGVudHM1MjQ1NSNEMjAyMzAzMTU2MjA4NTg5NzY" f3durn="urn:adsk.wipprod:dm.lineage:P7s-F4vPSu64QmUG7M5eEA" pcbguid="" lastpulledtime="" lastsyncedchangeguid="" latestrevisionid="" lastsyncedrevisionid="" lastboardhashguid="" lastpushedtime="" linktopcb3d="true"/>
 <plain>
 <wire x1="0" y1="0" x2="63.48" y2="0" width="0" layer="20"/>
 <wire x1="63.48" y1="0" x2="63.48" y2="88.57" width="0" layer="20"/>
@@ -2701,8 +2701,6 @@ Your Eurocircuits Team
 <contactref element="C6" pad="1"/>
 <contactref element="JP5" pad="2"/>
 <contactref element="R4" pad="2"/>
-<contactref element="IC1" pad="8"/>
-<contactref element="C7" pad="1"/>
 <wire x1="23.075" y1="50.05" x2="23.725" y2="50.7" width="0.5" layer="1"/>
 <wire x1="23.075" y1="49.725" x2="23.075" y2="50.05" width="0.5" layer="1"/>
 <wire x1="22.1" y1="48.75" x2="23.075" y2="49.725" width="0.5" layer="1"/>
@@ -2713,19 +2711,13 @@ Your Eurocircuits Team
 <wire x1="12.35" y1="71.825" x2="12.35" y2="63.375" width="0.5" layer="1"/>
 <wire x1="13" y1="72.475" x2="12.8375" y2="72.3125" width="0.5" layer="1"/>
 <wire x1="12.8375" y1="72.3125" x2="12.35" y2="71.825" width="0.5" layer="1"/>
-<wire x1="18.525" y1="72.475" x2="13" y2="72.475" width="0.5" layer="1"/>
-<wire x1="20.15" y1="70.85" x2="18.525" y2="72.475" width="0.5" layer="1"/>
+<wire x1="13" y1="72.475" x2="18.525" y2="72.475" width="0.5" layer="1"/>
 <wire x1="23.725" y1="50.7" x2="23.81" y2="50.8" width="0.5" layer="1"/>
-<wire x1="20.15" y1="70.85" x2="20.32" y2="70.545" width="0.5" layer="1"/>
-<wire x1="42.9" y1="42.9" x2="42.9" y2="35.75" width="0.5" layer="1"/>
-<wire x1="45.825" y1="45.825" x2="42.9" y2="42.9" width="0.5" layer="1"/>
-<wire x1="45.825" y1="50.375" x2="45.825" y2="45.825" width="0.5" layer="1"/>
 <wire x1="51.675" y1="56.225" x2="45.825" y2="50.375" width="0.5" layer="1"/>
 <wire x1="51.675" y1="65.975" x2="51.675" y2="56.225" width="0.5" layer="1"/>
 <wire x1="47.125" y1="70.525" x2="47.6125" y2="70.0375" width="0.5" layer="1"/>
 <wire x1="47.6125" y1="70.0375" x2="51.675" y2="65.975" width="0.5" layer="1"/>
 <wire x1="47.125" y1="76.7" x2="47.125" y2="70.525" width="0.5" layer="1"/>
-<wire x1="42.9" y1="35.75" x2="42.86" y2="35.56" width="0.5" layer="1"/>
 <wire x1="47.125" y1="76.7" x2="47.0154" y2="76.8604" width="0.5" layer="1"/>
 <wire x1="45.175" y1="71.5" x2="45.175" y2="71.175" width="0.5" layer="1"/>
 <wire x1="44.2" y1="72.475" x2="45.175" y2="71.5" width="0.5" layer="1"/>
@@ -2749,6 +2741,15 @@ Your Eurocircuits Team
 <wire x1="28.925" y1="83.525" x2="26.975" y2="81.575" width="0.5" layer="1"/>
 <wire x1="12.675" y1="72.475" x2="12.8375" y2="72.3125" width="0.5" layer="1"/>
 <wire x1="28.925" y1="83.525" x2="29.21" y2="83.82" width="0.5" layer="1"/>
+<contactref element="IC1" pad="8"/>
+<contactref element="C7" pad="1"/>
+<wire x1="45.825" y1="45.18995" x2="45.775" y2="45.13995" width="0.5" layer="1"/>
+<wire x1="45.775" y1="45.13995" x2="45.775" y2="43.235" width="0.5" layer="1"/>
+<wire x1="42.86" y1="40.32" x2="42.86" y2="35.56" width="0.5" layer="1"/>
+<wire x1="45.825" y1="50.375" x2="45.825" y2="45.18995" width="0.5" layer="1"/>
+<wire x1="45.775" y1="43.235" x2="42.86" y2="40.32" width="0.5" layer="1"/>
+<wire x1="18.525" y1="72.475" x2="20.32" y2="70.68" width="0.5" layer="1"/>
+<wire x1="20.32" y1="70.68" x2="20.32" y2="70.545" width="0.5" layer="1"/>
 </signal>
 <signal name="N$2">
 <contactref element="R2" pad="1"/>
@@ -3018,9 +3019,6 @@ Your Eurocircuits Team
 <mfgpreviewcolor name="coppercolor" color="0xFFFFBF00"/>
 <mfgpreviewcolor name="substratecolor" color="0xFF786E46"/>
 </mfgpreviewcolors>
-<errors>
-<approved hash="19,1,0064ff61024071e2"/>
-</errors>
 </board>
 </drawing>
 <compatibility>
