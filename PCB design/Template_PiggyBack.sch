@@ -11289,8 +11289,9 @@ Copy components that are needed more than once.</text>
 <label x="27.94" y="76.2" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="R15" gate="G$1" pin="1"/>
-<wire x1="63.5" y1="-119.38" x2="96.52" y2="-119.38" width="0.1524" layer="91"/>
+<pinref part="R15" gate="G$1" pin="2"/>
+<wire x1="53.34" y1="-119.38" x2="43.18" y2="-119.38" width="0.1524" layer="91"/>
+<label x="40.64" y="-116.84" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="PE7_" class="0">
@@ -11502,6 +11503,11 @@ Copy components that are needed more than once.</text>
 <segment>
 <pinref part="C17" gate="G$1" pin="1"/>
 <wire x1="71.12" y1="-127" x2="71.12" y2="-119.38" width="0.1524" layer="91"/>
+<pinref part="R15" gate="G$1" pin="1"/>
+<wire x1="63.5" y1="-119.38" x2="71.12" y2="-119.38" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="-119.38" x2="81.28" y2="-119.38" width="0.1524" layer="91"/>
+<junction x="71.12" y="-119.38"/>
+<label x="83.82" y="-116.84" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="+3.3V_FROM_UC" class="0">
