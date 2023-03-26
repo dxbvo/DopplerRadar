@@ -227,7 +227,7 @@ PC11
 GND</text>
 <rectangle x1="3.81" y1="3.81" x2="5.81" y2="85.09" layer="40"/>
 <rectangle x1="57.69" y1="3.81" x2="59.69" y2="85.09" layer="40" rot="R180"/>
-<text x="10.16" y="35.56" size="1.778" layer="25">Doppler Radar™ 📡
+<text x="10.16" y="34.29" size="1.778" layer="25">Doppler Radar™ 📡
 Claudio Fisch
 Diego Belusky</text>
 </plain>
@@ -2498,6 +2498,15 @@ Your Eurocircuits Team
 <vertex x="63.5" y="0"/>
 <vertex x="0" y="0"/>
 </polygon>
+<via x="10.16" y="76.2" extent="1-16" drill="0.35"/>
+<via x="30.48" y="76.2" extent="1-16" drill="0.35"/>
+<via x="53.34" y="76.2" extent="1-16" drill="0.35"/>
+<via x="10.16" y="50.8" extent="1-16" drill="0.35"/>
+<via x="33.02" y="50.8" extent="1-16" drill="0.35"/>
+<via x="52.07" y="50.8" extent="1-16" drill="0.35"/>
+<via x="10.16" y="26.67" extent="1-16" drill="0.35"/>
+<via x="33.02" y="26.67" extent="1-16" drill="0.35"/>
+<via x="52.07" y="26.67" extent="1-16" drill="0.35"/>
 </signal>
 <signal name="PF6">
 <contactref element="J2" pad="2"/>
