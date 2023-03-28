@@ -10759,7 +10759,7 @@ DIN A3, landscape with location and doc. field</description>
 <part name="JP8" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X6" device="" package3d_urn="urn:adsk.eagle:package:22472/2" value="OpenLog extension"/>
 <part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="C4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="1u"/>
+<part name="C4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="100n"/>
 <part name="JP5" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X5" device="" package3d_urn="urn:adsk.eagle:package:22469/2" value="Radar K-LC5-RFB-00C"/>
 <part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="FRAME1" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A3L-LOC" device=""/>
@@ -10767,7 +10767,6 @@ DIN A3, landscape with location and doc. field</description>
 <part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="C5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10u"/>
 <part name="C6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10u"/>
-<part name="+3V2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="P+4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="P+6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="IC4" library="burr-brown" library_urn="urn:adsk.eagle:library:111" deviceset="REG1117" device="" package3d_urn="urn:adsk.eagle:package:4940/1"/>
@@ -10808,7 +10807,6 @@ DIN A3, landscape with location and doc. field</description>
 <part name="TP4" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="PTR1" device="PAD1-17" package3d_urn="urn:adsk.eagle:package:27949/1"/>
 <part name="TP5" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="PTR1" device="PAD1-17" package3d_urn="urn:adsk.eagle:package:27949/1"/>
 <part name="TP6" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="PTR1" device="PAD1-17" package3d_urn="urn:adsk.eagle:package:27949/1"/>
-<part name="+3V3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="C17" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="1u"/>
 <part name="R15" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="3k"/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -10914,7 +10912,7 @@ Copy components that are needed more than once.</text>
 </instance>
 <instance part="C4" gate="G$1" x="12.7" y="-119.38" smashed="yes">
 <attribute name="NAME" x="6.604" y="-118.999" size="1.778" layer="95"/>
-<attribute name="VALUE" x="6.604" y="-124.079" size="1.778" layer="96"/>
+<attribute name="VALUE" x="14.224" y="-118.999" size="1.778" layer="96"/>
 </instance>
 <instance part="JP5" gate="A" x="-12.7" y="-83.82" smashed="yes" rot="MR0">
 <attribute name="NAME" x="-13.97" y="-75.565" size="1.778" layer="95" rot="MR0" align="bottom-right"/>
@@ -10941,9 +10939,6 @@ Copy components that are needed more than once.</text>
 <instance part="C6" gate="G$1" x="20.32" y="-48.26" smashed="yes">
 <attribute name="NAME" x="21.844" y="-47.879" size="1.778" layer="95"/>
 <attribute name="VALUE" x="21.844" y="-52.959" size="1.778" layer="96"/>
-</instance>
-<instance part="+3V2" gate="G$1" x="25.4" y="-43.18" smashed="yes" rot="R270">
-<attribute name="VALUE" x="22.86" y="-40.64" size="1.778" layer="96"/>
 </instance>
 <instance part="P+4" gate="1" x="17.78" y="-114.3" smashed="yes" rot="MR90">
 <attribute name="VALUE" x="17.78" y="-111.76" size="1.778" layer="96" rot="MR180"/>
@@ -11103,9 +11098,6 @@ Copy components that are needed more than once.</text>
 <instance part="TP6" gate="G$1" x="99.06" y="-198.12" smashed="yes" rot="R180">
 <attribute name="NAME" x="100.076" y="-191.77" size="1.778" layer="95" rot="R270"/>
 <attribute name="TP_SIGNAL_NAME" x="97.79" y="-195.58" size="1.778" layer="97" rot="R180"/>
-</instance>
-<instance part="+3V3" gate="G$1" x="-10.16" y="-152.4" smashed="yes" rot="R90">
-<attribute name="VALUE" x="-7.62" y="-154.94" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="C17" gate="G$1" x="71.12" y="-129.54" smashed="yes">
 <attribute name="NAME" x="65.024" y="-129.159" size="1.778" layer="95"/>
@@ -11515,24 +11507,9 @@ Copy components that are needed more than once.</text>
 </net>
 <net name="+3V3" class="0">
 <segment>
-<pinref part="IC4" gate="G$1" pin="VOUT"/>
-<pinref part="+3V2" gate="G$1" pin="+3V3"/>
-<wire x1="17.78" y1="-43.18" x2="20.32" y2="-43.18" width="0.1524" layer="91"/>
-<pinref part="C6" gate="G$1" pin="1"/>
-<wire x1="20.32" y1="-43.18" x2="22.86" y2="-43.18" width="0.1524" layer="91"/>
-<wire x1="20.32" y1="-45.72" x2="20.32" y2="-43.18" width="0.1524" layer="91"/>
-<junction x="20.32" y="-43.18"/>
-</segment>
-<segment>
 <pinref part="JP5" gate="A" pin="2"/>
 <wire x1="7.62" y1="-81.28" x2="-10.16" y2="-81.28" width="0.1524" layer="91"/>
 <pinref part="+3V1" gate="G$1" pin="+3V3"/>
-</segment>
-<segment>
-<pinref part="R4" gate="G$1" pin="2"/>
-<wire x1="2.54" y1="-157.48" x2="2.54" y2="-152.4" width="0.1524" layer="91"/>
-<pinref part="+3V3" gate="G$1" pin="+3V3"/>
-<wire x1="-7.62" y1="-152.4" x2="2.54" y2="-152.4" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <wire x1="170.18" y1="-162.56" x2="170.18" y2="-165.1" width="0.1524" layer="91"/>
@@ -11547,6 +11524,21 @@ Copy components that are needed more than once.</text>
 <junction x="167.64" y="-30.48"/>
 <wire x1="167.64" y1="-30.48" x2="167.64" y2="-22.86" width="0.1524" layer="91"/>
 <label x="167.64" y="-22.86" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R4" gate="G$1" pin="2"/>
+<wire x1="2.54" y1="-157.48" x2="2.54" y2="-152.4" width="0.1524" layer="91"/>
+<wire x1="-7.62" y1="-152.4" x2="2.54" y2="-152.4" width="0.1524" layer="91"/>
+<label x="-10.16" y="-149.86" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="IC4" gate="G$1" pin="VOUT"/>
+<wire x1="17.78" y1="-43.18" x2="20.32" y2="-43.18" width="0.1524" layer="91"/>
+<pinref part="C6" gate="G$1" pin="1"/>
+<wire x1="20.32" y1="-43.18" x2="22.86" y2="-43.18" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="-45.72" x2="20.32" y2="-43.18" width="0.1524" layer="91"/>
+<junction x="20.32" y="-43.18"/>
+<label x="22.86" y="-43.18" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$2" class="0">

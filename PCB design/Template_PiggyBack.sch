@@ -10810,6 +10810,7 @@ DIN A3, landscape with location and doc. field</description>
 <part name="C17" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="1u"/>
 <part name="R15" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="3k"/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="C18" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="100n"/>
 </parts>
 <sheets>
 <sheet>
@@ -11110,6 +11111,10 @@ Copy components that are needed more than once.</text>
 <instance part="GND1" gate="1" x="71.12" y="-137.16" smashed="yes">
 <attribute name="VALUE" x="68.58" y="-139.7" size="1.778" layer="96"/>
 </instance>
+<instance part="C18" gate="G$1" x="22.86" y="-83.82" smashed="yes">
+<attribute name="NAME" x="16.764" y="-83.439" size="1.778" layer="95"/>
+<attribute name="VALUE" x="24.384" y="-83.439" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -11153,8 +11158,15 @@ Copy components that are needed more than once.</text>
 </segment>
 <segment>
 <pinref part="JP5" gate="A" pin="4"/>
-<wire x1="-10.16" y1="-86.36" x2="10.16" y2="-86.36" width="0.1524" layer="91"/>
+<wire x1="-10.16" y1="-86.36" x2="5.08" y2="-86.36" width="0.1524" layer="91"/>
 <pinref part="GND4" gate="1" pin="GND"/>
+<pinref part="C18" gate="G$1" pin="2"/>
+<wire x1="5.08" y1="-86.36" x2="10.16" y2="-86.36" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="-88.9" x2="15.24" y2="-88.9" width="0.1524" layer="91"/>
+<wire x1="15.24" y1="-88.9" x2="15.24" y2="-83.82" width="0.1524" layer="91"/>
+<wire x1="15.24" y1="-83.82" x2="5.08" y2="-83.82" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="-83.82" x2="5.08" y2="-86.36" width="0.1524" layer="91"/>
+<junction x="5.08" y="-86.36"/>
 </segment>
 <segment>
 <wire x1="-10.16" y1="-53.34" x2="-10.16" y2="-55.88" width="0.1524" layer="91"/>
@@ -11508,12 +11520,14 @@ Copy components that are needed more than once.</text>
 <net name="+3V3" class="0">
 <segment>
 <pinref part="JP5" gate="A" pin="2"/>
-<wire x1="7.62" y1="-81.28" x2="-10.16" y2="-81.28" width="0.1524" layer="91"/>
+<wire x1="7.62" y1="-81.28" x2="5.08" y2="-81.28" width="0.1524" layer="91"/>
 <pinref part="+3V1" gate="G$1" pin="+3V3"/>
-</segment>
-<segment>
-<wire x1="170.18" y1="-162.56" x2="170.18" y2="-165.1" width="0.1524" layer="91"/>
-<label x="170.18" y="-162.56" size="1.778" layer="95"/>
+<pinref part="C18" gate="G$1" pin="1"/>
+<wire x1="5.08" y1="-81.28" x2="-10.16" y2="-81.28" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="-81.28" x2="22.86" y2="-76.2" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="-76.2" x2="5.08" y2="-76.2" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="-76.2" x2="5.08" y2="-81.28" width="0.1524" layer="91"/>
+<junction x="5.08" y="-81.28"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="P" pin="V+"/>
@@ -11630,9 +11644,21 @@ Copy components that are needed more than once.</text>
 <wire x1="175.26" y1="-170.18" x2="170.18" y2="-170.18" width="0.1524" layer="91"/>
 <wire x1="170.18" y1="-170.18" x2="170.18" y2="-165.1" width="0.1524" layer="91"/>
 <junction x="170.18" y="-170.18"/>
+<wire x1="170.18" y1="-162.56" x2="170.18" y2="-165.1" width="0.1524" layer="91"/>
+<label x="170.18" y="-162.56" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$6" class="0">
+<net name="V_GND" class="0">
+<segment>
+<pinref part="R1" gate="G$1" pin="1"/>
+<wire x1="121.92" y1="-86.36" x2="121.92" y2="-93.98" width="0.1524" layer="91"/>
+<label x="121.92" y="-93.98" size="1.778" layer="95" rot="R180"/>
+</segment>
+<segment>
+<pinref part="R9" gate="G$1" pin="1"/>
+<wire x1="124.46" y1="-226.06" x2="124.46" y2="-233.68" width="0.1524" layer="91"/>
+<label x="124.46" y="-233.68" size="1.778" layer="95" rot="R180"/>
+</segment>
 <segment>
 <pinref part="R4" gate="G$1" pin="1"/>
 <pinref part="R8" gate="G$1" pin="2"/>
@@ -11647,21 +11673,7 @@ Copy components that are needed more than once.</text>
 <pinref part="TP2" gate="G$1" pin="TP"/>
 <wire x1="33.02" y1="-177.8" x2="40.64" y2="-177.8" width="0.1524" layer="91"/>
 <junction x="33.02" y="-177.8"/>
-</segment>
-</net>
-<net name="V_GND" class="0">
-<segment>
 <label x="40.64" y="-177.8" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="R1" gate="G$1" pin="1"/>
-<wire x1="121.92" y1="-86.36" x2="121.92" y2="-93.98" width="0.1524" layer="91"/>
-<label x="121.92" y="-93.98" size="1.778" layer="95" rot="R180"/>
-</segment>
-<segment>
-<pinref part="R9" gate="G$1" pin="1"/>
-<wire x1="124.46" y1="-226.06" x2="124.46" y2="-233.68" width="0.1524" layer="91"/>
-<label x="124.46" y="-233.68" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="N$1" class="0">

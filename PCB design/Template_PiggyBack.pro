@@ -1,25 +1,25 @@
 EAGLE AutoRouter Statistics:
 
-Job           : /Users/diegobelusky/Library/CloudStorage/OneDrive-ZHAW/ET23FS/Electronics Project 2/PCB design/Template_PiggyBack.brd
+Job           : /Users/diegobelusky/Downloads/PCB design_V2/Template_PiggyBack.brd
 
-Start at      : 16:54:30 (26.03.23)
-End at        : 16:54:34 (26.03.23)
-Elapsed time  : 00:00:02
+Start at      : 12:19:09 (27.03.23)
+End at        : 12:19:15 (27.03.23)
+Elapsed time  : 00:00:01
 
-Signals       :    49   RoutingGrid: 19.685 mil  Layers: 2
-Connections   :    81   predefined:  23 ( 0 Vias )
+Signals       :    48   RoutingGrid: 19.685 mil  Layers: 2
+Connections   :    84   predefined:  24 ( 0 Vias )
 
-Router memory :   111780
+Router memory :   113400
 
-Passname          :     Route Optimize1 Optimize2 Optimize3 Optimize4 Optimize5 Optimize6 Optimize7 Optimize8 Optimize9Optimize10Optimize11Optimize12
+Passname          :    Busses     Route Optimize1 Optimize2 Optimize3 Optimize4 Optimize5 Optimize6 Optimize7 Optimize8 Optimize9Optimize10Optimize11Optimize12
 
-Time per pass     :  00:00:00  00:00:00  00:00:01  00:00:00  00:00:00  00:00:00  00:00:00  00:00:00  00:00:00  00:00:00  00:00:01  00:00:00  00:00:00
-Number of Ripups  :         1         0         0         0         0         0         0         0         0         0         0         0         0
-max. Level        :         1         0         0         0         0         0         0         0         0         0         0         0         0
-max. Total        :         3         0         0         0         0         0         0         0         0         0         0         0         0
+Time per pass     :  00:00:00  00:00:00  00:00:00  00:00:00  00:00:00  00:00:00  00:00:00  00:00:01  00:00:00  00:00:00  00:00:00  00:00:00  00:00:00  00:00:00
+Number of Ripups  :         0         0         0         0         0         0         0         0         0         0         0         0         0         0
+max. Level        :         0         0         0         0         0         0         0         0         0         0         0         0         0         0
+max. Total        :         0         0         0         0         0         0         0         0         0         0         0         0         0         0
 
-Routed            :        58        58        58        58        58        58        58        58        58        58        58        58        58
-Vias              :        14        13        13        13        13        13        13        11         9         9         9         9         9
-Resolution        :   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %
+Routed            :         6        60        60        60        60        60        60        60        60        60        60        60        60        60
+Vias              :         0        12        11        11        11        11        11        11         8         8         8         8         8         8
+Resolution        :    35.7 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %
 
 Final             : 100.0% finished

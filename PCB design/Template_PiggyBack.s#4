@@ -10809,7 +10809,6 @@ DIN A3, landscape with location and doc. field</description>
 <part name="TP5" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="PTR1" device="PAD1-17" package3d_urn="urn:adsk.eagle:package:27949/1"/>
 <part name="TP6" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="PTR1" device="PAD1-17" package3d_urn="urn:adsk.eagle:package:27949/1"/>
 <part name="+3V3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
-<part name="+3V4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="C17" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="1u"/>
 <part name="R15" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="3k"/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -11108,9 +11107,6 @@ Copy components that are needed more than once.</text>
 <instance part="+3V3" gate="G$1" x="-10.16" y="-152.4" smashed="yes" rot="R90">
 <attribute name="VALUE" x="-7.62" y="-154.94" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="+3V4" gate="G$1" x="170.18" y="-27.94" smashed="yes" rot="R270">
-<attribute name="VALUE" x="170.18" y="-25.4" size="1.778" layer="96"/>
-</instance>
 <instance part="C17" gate="G$1" x="71.12" y="-129.54" smashed="yes">
 <attribute name="NAME" x="65.024" y="-129.159" size="1.778" layer="95"/>
 <attribute name="VALUE" x="65.024" y="-134.239" size="1.778" layer="96"/>
@@ -11289,8 +11285,9 @@ Copy components that are needed more than once.</text>
 <label x="27.94" y="76.2" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="R15" gate="G$1" pin="1"/>
-<wire x1="63.5" y1="-119.38" x2="96.52" y2="-119.38" width="0.1524" layer="91"/>
+<pinref part="R15" gate="G$1" pin="2"/>
+<wire x1="53.34" y1="-119.38" x2="43.18" y2="-119.38" width="0.1524" layer="91"/>
+<label x="40.64" y="-116.84" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="PE7_" class="0">
@@ -11502,6 +11499,11 @@ Copy components that are needed more than once.</text>
 <segment>
 <pinref part="C17" gate="G$1" pin="1"/>
 <wire x1="71.12" y1="-127" x2="71.12" y2="-119.38" width="0.1524" layer="91"/>
+<pinref part="R15" gate="G$1" pin="1"/>
+<wire x1="63.5" y1="-119.38" x2="71.12" y2="-119.38" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="-119.38" x2="81.28" y2="-119.38" width="0.1524" layer="91"/>
+<junction x="71.12" y="-119.38"/>
+<label x="83.82" y="-116.84" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="+3.3V_FROM_UC" class="0">
@@ -11533,17 +11535,18 @@ Copy components that are needed more than once.</text>
 <wire x1="-7.62" y1="-152.4" x2="2.54" y2="-152.4" width="0.1524" layer="91"/>
 </segment>
 <segment>
+<wire x1="170.18" y1="-162.56" x2="170.18" y2="-165.1" width="0.1524" layer="91"/>
+<label x="170.18" y="-162.56" size="1.778" layer="95"/>
+</segment>
+<segment>
 <pinref part="IC1" gate="P" pin="V+"/>
 <pinref part="C7" gate="G$1" pin="1"/>
 <wire x1="172.72" y1="-35.56" x2="172.72" y2="-30.48" width="0.1524" layer="91"/>
 <wire x1="172.72" y1="-30.48" x2="167.64" y2="-30.48" width="0.1524" layer="91"/>
-<wire x1="167.64" y1="-30.48" x2="167.64" y2="-27.94" width="0.1524" layer="91"/>
+<wire x1="167.64" y1="-30.48" x2="170.18" y2="-30.48" width="0.1524" layer="91"/>
 <junction x="167.64" y="-30.48"/>
-<pinref part="+3V4" gate="G$1" pin="+3V3"/>
-</segment>
-<segment>
-<wire x1="170.18" y1="-162.56" x2="170.18" y2="-165.1" width="0.1524" layer="91"/>
-<label x="170.18" y="-162.56" size="1.778" layer="95"/>
+<wire x1="167.64" y1="-30.48" x2="167.64" y2="-22.86" width="0.1524" layer="91"/>
+<label x="167.64" y="-22.86" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -11770,16 +11773,6 @@ Copy components that are needed more than once.</text>
 </sheet>
 </sheets>
 <errors>
-<approved hash="104,1,124.46,55.88,IC1P,V-,GND,,,"/>
-<approved hash="104,1,256.54,71.12,CN1,VBUS,+5V,,,"/>
-<approved hash="208,1,182.88,68.58,+3V3,out,,,,"/>
-<approved hash="208,1,187.96,68.58,+3V3,sup,,,,"/>
-<approved hash="113,1,104.462,29.21,LED1,,,,,"/>
-<approved hash="113,1,193.335,29.5431,JP1,,,,,"/>
-<approved hash="113,1,256.53,197.492,COIL_RIGHT_IN,,,,,"/>
-<approved hash="113,1,241.29,196.644,COIL_LEFT_IN,,,,,"/>
-<approved hash="113,1,50.1485,63.4016,J1,,,,,"/>
-<approved hash="113,1,36.2115,63.4016,J2,,,,,"/>
 <approved hash="113,1,193.571,130.071,FRAME1,,,,,"/>
 </errors>
 </schematic>
