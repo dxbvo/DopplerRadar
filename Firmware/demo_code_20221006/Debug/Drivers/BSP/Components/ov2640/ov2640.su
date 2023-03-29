@@ -1,0 +1,4 @@
+../Drivers/BSP/Components/ov2640/ov2640.c:1046:6:ov2640_Init	24	static
+../Drivers/BSP/Components/ov2640/ov2640.c:1112:6:ov2640_Config	40	static
+../Drivers/BSP/Components/ov2640/ov2640.c:1172:10:ov2640_ReadID	16	static
+../Drivers/BSP/Components/ov2640/ov2640.c:1193:17:ov2640_ConvertValue	24	static

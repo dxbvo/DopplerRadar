@@ -1,0 +1,4 @@
+../Drivers/BSP/Components/s5k5cag/s5k5cag.c:3060:6:s5k5cag_Init	24	static
+../Drivers/BSP/Components/s5k5cag/s5k5cag.c:3141:6:s5k5cag_Config	48	static
+../Drivers/BSP/Components/s5k5cag/s5k5cag.c:3270:10:s5k5cag_ReadID	16	static
+../Drivers/BSP/Components/s5k5cag/s5k5cag.c:3292:17:s5k5cag_ConvertValue	24	static

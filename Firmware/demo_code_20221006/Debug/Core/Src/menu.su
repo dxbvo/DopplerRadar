@@ -1,0 +1,7 @@
+../Core/Src/menu.c:69:6:MENU_draw	40	static
+../Core/Src/menu.c:95:6:MENU_hint	8	static
+../Core/Src/menu.c:118:6:MENU_set_entry	24	static
+../Core/Src/menu.c:131:14:MENU_get_entry	64	static
+../Core/Src/menu.c:150:13:MENU_get_transition	16	static
+../Core/Src/menu.c:168:6:MENU_check_transition	16	static
+../Core/Src/menu.c:228:6:EXTI15_10_IRQHandler	8	static
