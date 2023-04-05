@@ -316,3 +316,29 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-12-20 14:01:05.817
 !MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2023-03-29 14:39:50.652 -----------------------------------------------
+eclipse.buildId=Version 1.11.0
+java.version=11.0.16
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/diegobelusky/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -data /Users/diegobelusky/Library/CloudStorage/OneDrive-ZHAW/ET23FS/Electronics Project 2/Firmware -keyring /Users/diegobelusky/.eclipse_keyring
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-03-29 14:39:54.906
+!MESSAGE Log4j initialized with config file /Users/diegobelusky/Library/CloudStorage/OneDrive-ZHAW/ET23FS/Electronics Project 2/Firmware/.metadata/.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-03-29 14:40:01.937
+!MESSAGE Started RMI Server, listening on port 41338
+!SESSION 2023-03-29 14:46:44.886 -----------------------------------------------
+eclipse.buildId=Version 1.11.0
+java.version=11.0.16
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/diegobelusky/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -data /Users/diegobelusky/Library/CloudStorage/OneDrive-ZHAW/ET23FS/Electronics Project 2/Firmware -keyring /Users/diegobelusky/.eclipse_keyring
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-03-29 14:46:48.598
+!MESSAGE Log4j initialized with config file /Users/diegobelusky/Library/CloudStorage/OneDrive-ZHAW/ET23FS/Electronics Project 2/Firmware/.metadata/.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-03-29 14:46:52.430
+!MESSAGE Started RMI Server, listening on port 41338

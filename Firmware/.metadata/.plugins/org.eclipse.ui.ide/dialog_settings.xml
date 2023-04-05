@@ -19,6 +19,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="/Users/diegobelusky/Library/CloudStorage/OneDrive-ZHAW/ET23FS/Electronics Project 2/Firmware"/>
 			<item value="C:\Users\diego\OneDrive\Documents\ET22HS\Electronics Project 1\demo_code_20221006"/>
 		</list>
 	</section>
