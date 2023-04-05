@@ -1,0 +1,13 @@
+<map id="Src/main.c" name="Src/main.c">
+<area shape="rect" id="node1" title="Sets up the microcontroller, the clock system and the peripherals." alt="" coords="591,5,676,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,87,99,114"/>
+<area shape="rect" id="node3" title=" " alt="" coords="123,87,280,114"/>
+<area shape="rect" id="node4" title=" " alt="" coords="304,80,451,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="475,87,650,114"/>
+<area shape="rect" id="node6" href="$main_8h.html" title="See main.c." alt="" coords="675,87,736,114"/>
+<area shape="rect" id="node7" href="$pushbutton_8h.html" title="See pushbutton.c." alt="" coords="761,87,858,114"/>
+<area shape="rect" id="node9" href="$menu_8h.html" title="See menu.c." alt="" coords="1001,87,1066,114"/>
+<area shape="rect" id="node11" href="$measuring_8h.html" title="See measuring.c." alt="" coords="883,87,976,114"/>
+<area shape="rect" id="node8" title=" " alt="" coords="832,169,907,196"/>
+<area shape="rect" id="node10" title=" " alt="" coords="1001,169,1066,196"/>
+</map>

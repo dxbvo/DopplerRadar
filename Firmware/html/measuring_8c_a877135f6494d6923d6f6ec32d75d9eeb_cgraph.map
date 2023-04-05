@@ -1,0 +1,4 @@
+<map id="DMA2_Stream3_IRQHandler" name="DMA2_Stream3_IRQHandler">
+<area shape="rect" id="node1" title="Interrupt handler for DMA2 Stream3." alt="" coords="5,5,192,32"/>
+<area shape="rect" id="node2" href="$measuring_8c.html#ad33d4cf42023ab7762e61cddb0d4113a" title="Resets the ADCs and the timer." alt="" coords="240,5,325,32"/>
+</map>

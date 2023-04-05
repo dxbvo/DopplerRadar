@@ -1,0 +1,4 @@
+<map id="MEAS_timer_init" name="MEAS_timer_init">
+<area shape="rect" id="node1" title="Configure the timer to trigger the ADC(s)" alt="" coords="104,5,224,32"/>
+<area shape="rect" id="node2" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main function." alt="" coords="5,5,56,32"/>
+</map>

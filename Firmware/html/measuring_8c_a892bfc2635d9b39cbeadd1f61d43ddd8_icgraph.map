@@ -1,0 +1,6 @@
+<map id="DAC_increment" name="DAC_increment">
+<area shape="rect" id="node1" title="Increment the DAC value and write it to the output." alt="" coords="307,31,420,57"/>
+<area shape="rect" id="node2" href="$measuring_8h.html#ab914f447426074c9498ed6a5902b7f73" title="Read one single value of the ADC in single conversion mode." alt="" coords="104,5,259,32"/>
+<area shape="rect" id="node4" href="$measuring_8c.html#a38ad4725462bdc5e86c4ead4f04b9fc2" title="Interrupt handler for the timer 2." alt="" coords="120,56,243,83"/>
+<area shape="rect" id="node3" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main function." alt="" coords="5,5,56,32"/>
+</map>

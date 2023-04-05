@@ -1,0 +1,5 @@
+<map id="Inc/measuring.h" name="Inc/measuring.h">
+<area shape="rect" id="node1" title="See measuring.c." alt="" coords="53,5,168,32"/>
+<area shape="rect" id="node2" href="$main_8c.html" title="Sets up the microcontroller, the clock system and the peripherals." alt="" coords="5,80,91,107"/>
+<area shape="rect" id="node3" href="$measuring_8c.html" title="Measuring voltages with the ADC(s) in different configurations." alt="" coords="115,80,232,107"/>
+</map>

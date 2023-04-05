@@ -1,0 +1,61 @@
+/**
+@page documenting Documenting Firmware
+
+@note
+The first step to a good documentation is to follow these coding guidelines
+<a href="https://ennis.zhaw.ch/files/CodingGuidelines.pdf">
+<b>https://ennis.zhaw.ch/files/CodingGuidelines.pdf</b>
+</a>
+
+C Code Documentation with Doxygen
+===
+Documenting SW and FW is done directly in the code by using special tags
+that can be extracted by a tool, which copiles a html documentation.
+@n This guarantees that the documentation is up to date.
+@n Such a tool is Doxygen <a href="http://www.doxygen.nl">http://www.doxygen.nl</a> 
+@n Introduction: <a href="http://www.doxygen.nl/manual/docblocks.html">http://www.doxygen.nl/manual/docblocks.html</a>
+@n Reference:   <a href="http://www.doxygen.nl/manual/commands.html">http://www.doxygen.nl/manual/commands.html</a>
+@n Note: The STM32 microcontroller libraries and this demo_code have been documented with Doxygen.
+
+Install and Run Doxygen
+---
+Download and install <a href="http://www.doxygen.nl">http://www.doxygen.nl</a> 
+@n Doxygen does not have a fixed associated file name extension. To open a configuration file: Start the program Doxywizard
+@n A suitable Doxygen configuration file named <strong>Doxyfile</strong> is already in the <strong>demo_code</strong> folder.
+You may open it from  within Doxywizard and adapt it to your needs. (File => Open  or afterwards File => Open recent)
+@n If needed edit the settings in the registers Wizard and/or Expert. Save the changes: File => Save
+@n Register Run => Run doxygen compiles the documentation
+@n Register Run => Show HTML output opens the documentation in a browser
+
+Dependency Graphs
+---
+Doxygen can generate graphs (e.g.  call and caller graphs) using the graphviz tool to visualize the dependency of files and functions.
+@n Download graphviz from <a href="http://www.graphviz.org">http://www.graphviz.org</a> and install it.
+@n Configure Doxygen to use graphviz:
+@n Start Doxywizard, open configuration File => Open… or Open recent
+@n
+@image html doxywizard_graphviz.png
+@n File => Save
+
+How to use Doxygen
+---
+The content (purpose, task) of every C- and H-file should be documented on the top of the file.
+@image html doxygen_file.png
+@n Each function should be preceeded by ist function header.
+It should be made clear what a function does, which parameters it expects and what result it returns.
+@image html doxygen_function.png
+@n Constants and variables can be documented directly inline after ///<
+@image html doxygen_variables.png
+
+Related Pages
+---
+The folder <strong>demo_code/html/doc</strong> contains some files that you have to edit to reflect your prototype.
+@n <a href="doc/main.dox">main.dox</a> is used as the main page in the documentation and should give a good overview of the project.
+@n <a href="doc/testing.dox">testing.dox</a> is the documentation of the tests that you have done.
+@n You can add other files if required, such as a FAQ or a user manual.
+They are automatically added to the <a href="pages.html">Related Pages</a> tab by Doxygen.
+
+---
+@author	Hanspeter Hochreutener (hhrt@zhaw.ch)
+@date 07.05.2020
+*/

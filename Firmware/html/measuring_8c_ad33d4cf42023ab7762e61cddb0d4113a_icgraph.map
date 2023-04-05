@@ -1,0 +1,9 @@
+<map id="ADC_reset" name="ADC_reset">
+<area shape="rect" id="node1" title="Resets the ADCs and the timer." alt="" coords="339,107,424,133"/>
+<area shape="rect" id="node2" href="$measuring_8h.html#ab914f447426074c9498ed6a5902b7f73" title="Read one single value of the ADC in single conversion mode." alt="" coords="120,5,275,32"/>
+<area shape="rect" id="node4" href="$measuring_8c.html#a06406eadf297fa89a6eaf9586b227a69" title="Interrupt handler for the ADCs." alt="" coords="136,56,259,83"/>
+<area shape="rect" id="node5" href="$measuring_8c.html#adab6f3e22e90bd5b1ceebb98022abdf2" title="Interrupt handler for DMA2 Stream1." alt="" coords="104,107,291,133"/>
+<area shape="rect" id="node6" href="$measuring_8c.html#a877135f6494d6923d6f6ec32d75d9eeb" title="Interrupt handler for DMA2 Stream3." alt="" coords="104,157,291,184"/>
+<area shape="rect" id="node7" href="$measuring_8c.html#a295198ed574625d416158a5fc54205ea" title="Interrupt handler for DMA2 Stream4." alt="" coords="104,208,291,235"/>
+<area shape="rect" id="node3" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main function." alt="" coords="5,5,56,32"/>
+</map>

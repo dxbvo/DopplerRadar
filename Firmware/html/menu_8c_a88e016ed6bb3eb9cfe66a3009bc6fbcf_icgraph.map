@@ -1,0 +1,5 @@
+<map id="MENU_check_transition" name="MENU_check_transition">
+<area shape="rect" id="node1" title="Check for selection/transition." alt="" coords="209,31,372,57"/>
+<area shape="rect" id="node2" href="$menu_8c.html#a738473a5b43f6c92b80ce1d3d6f77ed9" title="Interrupt handler for the touchscreen." alt="" coords="5,5,161,32"/>
+<area shape="rect" id="node3" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main function." alt="" coords="58,56,109,83"/>
+</map>

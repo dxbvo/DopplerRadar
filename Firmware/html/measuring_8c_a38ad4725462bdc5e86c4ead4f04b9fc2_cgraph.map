@@ -1,0 +1,4 @@
+<map id="TIM2_IRQHandler" name="TIM2_IRQHandler">
+<area shape="rect" id="node1" title="Interrupt handler for the timer 2." alt="" coords="5,5,128,32"/>
+<area shape="rect" id="node2" href="$measuring_8c.html#a892bfc2635d9b39cbeadd1f61d43ddd8" title="Increment the DAC value and write it to the output." alt="" coords="176,5,289,32"/>
+</map>

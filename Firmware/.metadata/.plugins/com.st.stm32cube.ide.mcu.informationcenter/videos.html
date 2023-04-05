@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon"/>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>Information Center</title>
+</head>
+<body>
+	<header class="header">
+	    <div class="header__logo"><a href="index.html"><img src="img/logo-ide.png" alt="STM32CubeIDE Logo"></a></div>
+	    <div class="header__logo--text"><a href="index.html">STM32CubeIDE Home</a></div>
+	    <div class="header__submenu--element">
+	        <svg xmlns="http://www.w3.org/2000/svg" width="6" height="11" viewBox="0 0 6 11">
+	            <path fill="#fff" fill-rule="nonzero" d="M4.442 5.11L0 9.519l.704.71 5.158-5.117L.71 0 .004.71z"/>
+	        </svg>
+	    </div>
+	    <div class="header__submenu--item">Videos &nbsp; &nbsp; &nbsp; Select the server: &nbsp;</div>
+			<select id="server_select_box">
+				<option valeur="yu" selected="yes">Youtube</option>
+				<option valeur="cn">stmcu.com.cn</option>
+			</select>
+	</header>
+	<main class="main">
+		<div class="tabs">
+			<div class="tab">
+				<input name="checkbox-tabs-group" type="radio" id="checkbox1" class="checkboxtab" checked>
+				<div class="content">
+					<div class="curVideo" id="curVideoDiv">
+							<div id="curVideoDesc" ></div>
+							<div class="curVideoPic">
+								<img id="curVideoPic" border="3"/>
+								<a id="videoLink" href="#" class="playWrapper"></a>
+								<span id="curVidDuration" ></span>
+							</div>
+					</div>
+					<div id="videoDiv"></div>
+					<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+					<script type="text/javascript" src="js/tutoVideos.js"></script>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>

@@ -56,34 +56,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := demo_code_20221006
+BUILD_ARTIFACT_NAME := Firmware
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-demo_code_20221006.elf \
+Firmware.elf \
 
 MAP_FILES += \
-demo_code_20221006.map \
+Firmware.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-demo_code_20221006.list \
+Firmware.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: demo_code_20221006.elf secondary-outputs
+main-build: Firmware.elf secondary-outputs
 
 # Tool invocations
-demo_code_20221006.elf demo_code_20221006.map: $(OBJS) $(USER_OBJS) /Users/diegobelusky/Documents/ETHS22/Electronics\ Projects\ 1/ETPM3/demo_code_20221006/STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "demo_code_20221006.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/diegobelusky/Documents/ETHS22/Electronics Projects 1/ETPM3/demo_code_20221006/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="demo_code_20221006.map" -Wl,--gc-sections -static -L../Drivers/CMSIS/Lib/GCC --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Firmware.elf Firmware.map: $(OBJS) $(USER_OBJS) /Users/diegobelusky/Library/CloudStorage/OneDrive-ZHAW/ET23FS/Electronics\ Project\ 2/Firmware/STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Firmware.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/diegobelusky/Library/CloudStorage/OneDrive-ZHAW/ET23FS/Electronics Project 2/Firmware/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Firmware.map" -Wl,--gc-sections -static -L../Drivers/CMSIS/Lib/GCC --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -92,14 +92,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-demo_code_20221006.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "demo_code_20221006.list"
+Firmware.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Firmware.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) default.size.stdout demo_code_20221006.elf demo_code_20221006.list demo_code_20221006.map
+	-$(RM) Firmware.elf Firmware.list Firmware.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)

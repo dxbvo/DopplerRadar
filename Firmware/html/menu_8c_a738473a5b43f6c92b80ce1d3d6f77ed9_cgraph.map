@@ -1,0 +1,4 @@
+<map id="EXTI15_10_IRQHandler" name="EXTI15_10_IRQHandler">
+<area shape="rect" id="node1" title="Interrupt handler for the touchscreen." alt="" coords="5,5,161,32"/>
+<area shape="rect" id="node2" href="$menu_8c.html#a88e016ed6bb3eb9cfe66a3009bc6fbcf" title="Check for selection/transition." alt="" coords="209,5,372,32"/>
+</map>

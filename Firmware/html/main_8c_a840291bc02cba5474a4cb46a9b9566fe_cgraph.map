@@ -1,0 +1,31 @@
+<map id="main" name="main">
+<area shape="rect" id="node1" title="Main function." alt="" coords="5,701,56,727"/>
+<area shape="rect" id="node2" href="$measuring_8h.html#a8cb802f06f0cae4125dd87c21c7bd5ee" title="Initialize ADCs, timer and DMA for simultaneous dual ADC acquisition." alt="" coords="113,5,269,47"/>
+<area shape="rect" id="node3" href="$measuring_8h.html#adea520dcb89bc4e799717146e9c6f20b" title="Start DMA, ADC and timer." alt="" coords="113,71,269,112"/>
+<area shape="rect" id="node4" href="$measuring_8h.html#a192c550f4180a187269caabf9ed9b698" title="Initialize ADC, timer and DMA for sequential acquisition = scan mode." alt="" coords="104,137,279,163"/>
+<area shape="rect" id="node5" href="$measuring_8h.html#a2fb1706a4f3c221df84b0ede30ba39cf" title="Start DMA, ADC and timer." alt="" coords="116,188,267,229"/>
+<area shape="rect" id="node6" href="$measuring_8h.html#af6c236e0b391beae12f714f7dd89a25e" title="Initialize ADC, timer and DMA for sequential acquisition = scan mode." alt="" coords="104,254,279,281"/>
+<area shape="rect" id="node7" href="$measuring_8h.html#abea69c67cbe966f55f2f5643bb274b77" title="Start DMA, ADC and timer." alt="" coords="116,305,267,347"/>
+<area shape="rect" id="node8" href="$measuring_8h.html#a8cfd7f56973e8fc6c0f8ec3ccd441533" title="Initialize ADC, timer and DMA for data acquisition in the background." alt="" coords="120,371,263,398"/>
+<area shape="rect" id="node9" href="$measuring_8h.html#a6ccc1212f3165f43b6dce7c4225a3796" title="Start DMA, ADC and timer." alt="" coords="116,422,267,449"/>
+<area shape="rect" id="node10" href="$measuring_8h.html#a56d96511f05d405a65b79e5f6c8a7fd1" title="Initialize the ADC in single conversion mode." alt="" coords="118,473,265,499"/>
+<area shape="rect" id="node11" href="$measuring_8h.html#ab914f447426074c9498ed6a5902b7f73" title="Read one single value of the ADC in single conversion mode." alt="" coords="114,523,269,550"/>
+<area shape="rect" id="node14" href="$measuring_8h.html#a4e76bf488f4e0c67e5db6e9c2d2e5813" title="Initialize the ADC to be triggered by a timer." alt="" coords="120,574,263,601"/>
+<area shape="rect" id="node15" href="$measuring_8h.html#ae5ffaeaedb181995f259a61ec05240ee" title="Start the ADC and the timer." alt="" coords="116,625,267,651"/>
+<area shape="rect" id="node16" href="$measuring_8h.html#a4500c15ee6b13637e00fd6b901b60224" title="Initialize the DAC." alt="" coords="155,675,228,702"/>
+<area shape="rect" id="node17" href="$measuring_8h.html#a0ec0c70d77844e92e6b1862ab7fc7fb8" title="Resets the DAC." alt="" coords="149,726,234,753"/>
+<area shape="rect" id="node18" href="$main_8c.html#a9506db1724e530dd11bccbdd8968998f" title="Disable the onboard gyroscope." alt="" coords="144,777,239,803"/>
+<area shape="rect" id="node19" href="$measuring_8h.html#a645930ff74ceaacb90aca99fae865f8f" title="Configure GPIOs in analog mode." alt="" coords="107,827,275,854"/>
+<area shape="rect" id="node20" href="$measuring_8h.html#af3778dd3469657b95ea6a05c1fe4de0a" title="Draw buffer data as curves." alt="" coords="127,878,256,905"/>
+<area shape="rect" id="node21" href="$measuring_8h.html#a2ace7017c3957ead5cd587fc6fae0290" title="Configure the timer to trigger the ADC(s)" alt="" coords="131,929,251,955"/>
+<area shape="rect" id="node22" href="$menu_8h.html#a88e016ed6bb3eb9cfe66a3009bc6fbcf" title="Check for selection/transition." alt="" coords="110,979,273,1006"/>
+<area shape="rect" id="node23" href="$menu_8h.html#a2cbb4c209c599e91da57c0d6cf8f710e" title="Draw the menu onto the display." alt="" coords="144,1030,239,1057"/>
+<area shape="rect" id="node24" href="$menu_8h.html#a3de77014a7c52cdf6ff1f973eee6f3f6" title="Get menu selection/transition." alt="" coords="119,1081,264,1107"/>
+<area shape="rect" id="node25" href="$menu_8h.html#a62e02a141652e1f34b11f73547ce6bc2" title="Shows a hint at startup." alt="" coords="147,1131,235,1158"/>
+<area shape="rect" id="node26" href="$pushbutton_8h.html#a1d6696a09e34d517e04ff82f792baf57" title="Configure interrupt on rising edge for the USER pushbutton." alt="" coords="138,1182,245,1209"/>
+<area shape="rect" id="node27" href="$pushbutton_8h.html#a6efe94714ab265a5e515c7266d234917" title="Configure the GPIO for the USER pushbutton." alt="" coords="159,1233,223,1259"/>
+<area shape="rect" id="node28" href="$pushbutton_8h.html#ab920dbc364e7b33bb9186ac45ae1a332" title="Was the pushbutton pressed?" alt="" coords="145,1283,238,1310"/>
+<area shape="rect" id="node29" href="$main_8c.html#ad554cbf06ce0fa6f92a0c4152b8a4c64" title="System Clock Configuration." alt="" coords="120,1334,263,1361"/>
+<area shape="rect" id="node12" href="$measuring_8c.html#ad33d4cf42023ab7762e61cddb0d4113a" title="Resets the ADCs and the timer." alt="" coords="341,498,426,525"/>
+<area shape="rect" id="node13" href="$measuring_8c.html#a892bfc2635d9b39cbeadd1f61d43ddd8" title="Increment the DAC value and write it to the output." alt="" coords="327,549,440,575"/>
+</map>

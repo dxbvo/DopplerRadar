@@ -22,10 +22,6 @@
 extern bool MEAS_data_ready;
 extern uint32_t MEAS_input_count;
 extern bool DAC_active;
-//extern int ADC_NUMS;
-
-// changed defined extern varibles
-//extern int32_t pad_left[ADC_NUMS], pad_right[ADC_NUMS], coil_left[ADC_NUMS], coil_right[ADC_NUMS];
 
 
 /******************************************************************************
@@ -51,16 +47,6 @@ void ADC3_IN13_IN4_scan_init(void);
 void ADC3_IN13_IN4_scan_start(void);
 
 void MEAS_show_data(void);
-
-// our added functions
-void orderSamples(void);
-double averageOfSamples(int[]);
-int32_t rootMeanSquare(int32_t[]);
-int32_t averageOfTwoArrays(int32_t, int32_t);
-int32_t findDistance(int32_t);
-
-
-
 
 
 #endif

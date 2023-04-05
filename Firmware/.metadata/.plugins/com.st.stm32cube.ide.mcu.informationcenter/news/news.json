@@ -1,0 +1,12 @@
+data='[ \
+	{ \
+		"image": "news/NewVideos.png", \
+		"link": "", \
+		"caption": "" \
+	}, \
+	{ \
+		"image": "news/SFRUpdates.png", \
+		"link": "", \
+		"caption": "" \
+	} \
+]';

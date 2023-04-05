@@ -1,0 +1,35 @@
+/**
+@page testing Testing Firmware
+
+Testing is a vast field and there are lots of different approaches.
+In the context of the Cable-Monitor, however,
+testing the different modules is straightforward.
+A final combined test shows if the modules work together as expected.
+
+Even if only simple and quite obvious tests have been done,
+it is nonetheless important to document them.
+
+@todo Define, run, document and evaluate all the important tests.
+
+<h1>Test</h1>
+<table>
+<tr>
+	<th>Module</th><th>Test Conditions</th><th>Expected</th><th>Observed</th><th>Pass/Fail</th><th>Remarks</th>
+</tr>
+<tr>
+	<td>Menu system</td><td>Touch menu item "Single"</td><td>Switch to state "Single"</td><td>Switches to "Single"</td><td>Pass</th><td>Sluggish reaction => improve response speed</td>
+</tr>
+<tr>
+	<td>ADC with DMA</td><td>fs = 300Hz, N = 24<br>f = 50Hz, V = 1Vdc+1Vpp</td><td>Array filled with 24 samples = 3 signal periods<br>Minimum = 620, Maximum = 1,861</td><td>3 signal periods<br>Minimum = 610, Maximum = 1.835</td><td>Pass</th><td>Reference voltage of ADC is 3.35V, not 3.30V</td>
+</tr>
+<tr>
+	<td>Display data</td><td>Array with random values in the range 0 to 4095</td><td>Line plot</td><td>Plot works, but uC crashes when data > 127</td><td>Fail</th><td>Wrong datatype or typecast?<br>Display limits?</td>
+</tr>
+</table>
+@n Test date: 07.05.2020
+@n Tester: Hanspeter Hochreutener (hhrt@zhaw.ch)
+
+---
+@author	Hanspeter Hochreutener (hhrt@zhaw.ch)
+@date 07.05.2020
+*/

@@ -1,0 +1,57 @@
+/**
+@mainpage Demo-Code
+
+This demo_code is a template for the <b>Electronics-Project Modules</b>
+<b>ET.PM3: Cable-Monitor</b> and <b>ET.PM4: Radar-Sensor</b>
+@n in the <b>second year of the electronics engineering curriculum</b>
+at the School of Engineering of the Zurich University of Applied Sciences.
+
+Before starting to write own code, read this documentation carefully.
+@n The file measuring.c shows how to configure ADC, Timer and DMA.
+@n Consult the file menu.c for examples on how to use display and touchscreen.
+@n pushbutton.c handles external interrupts.
+@n main.c puts everything together.
+
+@image html demo_screenshot.jpg
+
+The template code is written for the evaluation board
+<b>32F429IDISCOVERY (Discovery kit with STM32F429ZI MCU)</b>.
+
+
+What has to be done in terms of Firmware Documentation
+===
+
+Overall Information on the Project
+---
+@todo Adapt the file mainpage.dox in the folder html/doc
+to reflect your own project
+@n You may add files in the same folder if appropriate.
+They will be added automatically by Doxygen to the
+<a href="pages.html">Related Pages</a> tab.
+@n Use one of the files present in the html/doc folder as template.
+You can find the often used @@commands for Doxygen in those files.
+
+Documenting the Code
+---
+@todo Document all the .h and .c files
+See @link documenting.html @endlink on how to do that.
+@n Before editing or writing code,
+take the @link coding_guidelines.html @endlink to heart.
+
+Documenting the Tests
+---
+@todo Define a test plan and document the tests.
+@n This includes at least:
+test scenarios, conditions, expected results, pass/fail criteria,
+achieved results, verdict and remarks where appropriate.
+@n Use @link testing.html @endlink as a starting point.
+
+---
+@author	Hanspeter Hochreutener (hhrt@zhaw.ch)
+@date 03.08.2021
+@note  Evalboard revision E (blue PCB) has an inverted y-axis
+in the touch controller compared to the display.
+Uncomment or comment the <b>\#define EVAL_REV_E</b> in main.h accordingly.
+
+@bug No known bugs.
+*/

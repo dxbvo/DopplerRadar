@@ -1,0 +1,10 @@
+<map id="Src/menu.c" name="Src/menu.c">
+<area shape="rect" id="node1" title="The menu." alt="" coords="425,5,514,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,87,99,114"/>
+<area shape="rect" id="node3" title=" " alt="" coords="123,87,280,114"/>
+<area shape="rect" id="node4" title=" " alt="" coords="304,80,451,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="475,87,650,114"/>
+<area shape="rect" id="node6" href="$main_8h.html" title="See main.c." alt="" coords="675,87,736,114"/>
+<area shape="rect" id="node7" href="$menu_8h.html" title="See menu.c." alt="" coords="761,87,826,114"/>
+<area shape="rect" id="node8" title=" " alt="" coords="761,169,826,196"/>
+</map>

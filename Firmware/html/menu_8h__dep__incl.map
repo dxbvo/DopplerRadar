@@ -1,0 +1,5 @@
+<map id="Inc/menu.h" name="Inc/menu.h">
+<area shape="rect" id="node1" title="See menu.c." alt="" coords="61,5,147,32"/>
+<area shape="rect" id="node2" href="$main_8c.html" title="Sets up the microcontroller, the clock system and the peripherals." alt="" coords="5,80,91,107"/>
+<area shape="rect" id="node3" href="$menu_8c.html" title="The menu." alt="" coords="115,80,205,107"/>
+</map>

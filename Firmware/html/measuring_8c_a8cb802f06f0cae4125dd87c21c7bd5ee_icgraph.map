@@ -1,0 +1,4 @@
+<map id="ADC1_IN13_ADC2_IN5_dual_init" name="ADC1_IN13_ADC2_IN5_dual_init">
+<area shape="rect" id="node1" title="Initialize ADCs, timer and DMA for simultaneous dual ADC acquisition." alt="" coords="104,5,260,47"/>
+<area shape="rect" id="node2" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main function." alt="" coords="5,13,56,39"/>
+</map>

@@ -44,7 +44,7 @@ Core/Src/measuring.o: ../Core/Src/measuring.c \
  ../Drivers/BSP/STM32F429I-Discovery/../Components/stmpe811/stmpe811.h \
  ../Drivers/BSP/STM32F429I-Discovery/../Components/stmpe811/../Common/ts.h \
  ../Drivers/BSP/STM32F429I-Discovery/../Components/stmpe811/../Common/io.h \
- ../Core/Inc/measuring.h ../Core/Src/lut.csv
+ ../Core/Inc/measuring.h
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f429xx.h:
 ../Drivers/CMSIS/Include/core_cm4.h:
@@ -91,4 +91,3 @@ Core/Src/measuring.o: ../Core/Src/measuring.c \
 ../Drivers/BSP/STM32F429I-Discovery/../Components/stmpe811/../Common/ts.h:
 ../Drivers/BSP/STM32F429I-Discovery/../Components/stmpe811/../Common/io.h:
 ../Core/Inc/measuring.h:
-../Core/Src/lut.csv:

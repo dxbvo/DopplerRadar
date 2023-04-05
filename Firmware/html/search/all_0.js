@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['adc1_5fin13_5fadc2_5fin5_5fdual_5finit_0',['ADC1_IN13_ADC2_IN5_dual_init',['../measuring_8h.html#a8cb802f06f0cae4125dd87c21c7bd5ee',1,'ADC1_IN13_ADC2_IN5_dual_init(void):&#160;measuring.c'],['../measuring_8c.html#a8cb802f06f0cae4125dd87c21c7bd5ee',1,'ADC1_IN13_ADC2_IN5_dual_init(void):&#160;measuring.c']]],
+  ['adc1_5fin13_5fadc2_5fin5_5fdual_5fstart_1',['ADC1_IN13_ADC2_IN5_dual_start',['../measuring_8h.html#adea520dcb89bc4e799717146e9c6f20b',1,'ADC1_IN13_ADC2_IN5_dual_start(void):&#160;measuring.c'],['../measuring_8c.html#adea520dcb89bc4e799717146e9c6f20b',1,'ADC1_IN13_ADC2_IN5_dual_start(void):&#160;measuring.c']]],
+  ['adc2_5fin13_5fin5_5fscan_5finit_2',['ADC2_IN13_IN5_scan_init',['../measuring_8h.html#a192c550f4180a187269caabf9ed9b698',1,'ADC2_IN13_IN5_scan_init(void):&#160;measuring.c'],['../measuring_8c.html#a192c550f4180a187269caabf9ed9b698',1,'ADC2_IN13_IN5_scan_init(void):&#160;measuring.c']]],
+  ['adc2_5fin13_5fin5_5fscan_5fstart_3',['ADC2_IN13_IN5_scan_start',['../measuring_8h.html#a2fb1706a4f3c221df84b0ede30ba39cf',1,'ADC2_IN13_IN5_scan_start(void):&#160;measuring.c'],['../measuring_8c.html#a2fb1706a4f3c221df84b0ede30ba39cf',1,'ADC2_IN13_IN5_scan_start(void):&#160;measuring.c']]],
+  ['adc3_5fin13_5fin4_5fscan_5finit_4',['ADC3_IN13_IN4_scan_init',['../measuring_8h.html#af6c236e0b391beae12f714f7dd89a25e',1,'ADC3_IN13_IN4_scan_init(void):&#160;measuring.c'],['../measuring_8c.html#af6c236e0b391beae12f714f7dd89a25e',1,'ADC3_IN13_IN4_scan_init(void):&#160;measuring.c']]],
+  ['adc3_5fin13_5fin4_5fscan_5fstart_5',['ADC3_IN13_IN4_scan_start',['../measuring_8h.html#abea69c67cbe966f55f2f5643bb274b77',1,'ADC3_IN13_IN4_scan_start(void):&#160;measuring.c'],['../measuring_8c.html#abea69c67cbe966f55f2f5643bb274b77',1,'ADC3_IN13_IN4_scan_start(void):&#160;measuring.c']]],
+  ['adc3_5fin4_5fdma_5finit_6',['ADC3_IN4_DMA_init',['../measuring_8h.html#a8cfd7f56973e8fc6c0f8ec3ccd441533',1,'ADC3_IN4_DMA_init(void):&#160;measuring.c'],['../measuring_8c.html#a8cfd7f56973e8fc6c0f8ec3ccd441533',1,'ADC3_IN4_DMA_init(void):&#160;measuring.c']]],
+  ['adc3_5fin4_5fdma_5fstart_7',['ADC3_IN4_DMA_start',['../measuring_8h.html#a6ccc1212f3165f43b6dce7c4225a3796',1,'ADC3_IN4_DMA_start(void):&#160;measuring.c'],['../measuring_8c.html#a6ccc1212f3165f43b6dce7c4225a3796',1,'ADC3_IN4_DMA_start(void):&#160;measuring.c']]],
+  ['adc3_5fin4_5fsingle_5finit_8',['ADC3_IN4_single_init',['../measuring_8h.html#a56d96511f05d405a65b79e5f6c8a7fd1',1,'ADC3_IN4_single_init(void):&#160;measuring.c'],['../measuring_8c.html#a56d96511f05d405a65b79e5f6c8a7fd1',1,'ADC3_IN4_single_init(void):&#160;measuring.c']]],
+  ['adc3_5fin4_5fsingle_5fread_9',['ADC3_IN4_single_read',['../measuring_8h.html#ab914f447426074c9498ed6a5902b7f73',1,'ADC3_IN4_single_read(void):&#160;measuring.c'],['../measuring_8c.html#ab914f447426074c9498ed6a5902b7f73',1,'ADC3_IN4_single_read(void):&#160;measuring.c']]],
+  ['adc3_5fin4_5ftimer_5finit_10',['ADC3_IN4_timer_init',['../measuring_8h.html#a4e76bf488f4e0c67e5db6e9c2d2e5813',1,'ADC3_IN4_timer_init(void):&#160;measuring.c'],['../measuring_8c.html#a4e76bf488f4e0c67e5db6e9c2d2e5813',1,'ADC3_IN4_timer_init(void):&#160;measuring.c']]],
+  ['adc3_5fin4_5ftimer_5fstart_11',['ADC3_IN4_timer_start',['../measuring_8h.html#ae5ffaeaedb181995f259a61ec05240ee',1,'ADC3_IN4_timer_start(void):&#160;measuring.c'],['../measuring_8c.html#ae5ffaeaedb181995f259a61ec05240ee',1,'ADC3_IN4_timer_start(void):&#160;measuring.c']]],
+  ['adc_5fclock_12',['ADC_CLOCK',['../measuring_8c.html#a1827eb5abf90948b5eaf230be00170fd',1,'measuring.c']]],
+  ['adc_5fclocks_5fps_13',['ADC_CLOCKS_PS',['../measuring_8c.html#ad376b870a0bfe67bc29f21d6b66ff086',1,'measuring.c']]],
+  ['adc_5fdac_5fres_14',['ADC_DAC_RES',['../measuring_8c.html#a1a99cc3586f8ed1522076e58e22ca0f7',1,'measuring.c']]],
+  ['adc_5ffs_15',['ADC_FS',['../measuring_8c.html#aa8ccd2dce306c0d219eeabd92b30fcc0',1,'measuring.c']]],
+  ['adc_5firqhandler_16',['ADC_IRQHandler',['../measuring_8c.html#a06406eadf297fa89a6eaf9586b227a69',1,'measuring.c']]],
+  ['adc_5fnums_17',['ADC_NUMS',['../measuring_8c.html#a0a4c3d17b626e4d7b31b780e85dde7cf',1,'measuring.c']]],
+  ['adc_5freset_18',['ADC_reset',['../measuring_8h.html#ad33d4cf42023ab7762e61cddb0d4113a',1,'ADC_reset(void):&#160;measuring.c'],['../measuring_8c.html#ad33d4cf42023ab7762e61cddb0d4113a',1,'ADC_reset(void):&#160;measuring.c']]],
+  ['adc_5fsample_5fcount_19',['ADC_sample_count',['../measuring_8c.html#a70e7c139b5911548b5eacdd74e471d5b',1,'measuring.c']]],
+  ['adc_5fsamples_20',['ADC_samples',['../measuring_8c.html#ab7f88c24d5816d6d48d932fdb53caaf2',1,'measuring.c']]]
+];
