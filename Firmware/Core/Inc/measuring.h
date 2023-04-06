@@ -39,14 +39,15 @@ void ADC3_IN4_timer_init(void);
 void ADC3_IN4_timer_start(void);
 void ADC3_IN4_DMA_init(void);
 void ADC3_IN4_DMA_start(void);
-void ADC1_IN13_ADC2_IN5_dual_init(void);
+void ADC1_IN13_ADC2_IN11_dual_init(void);
 void ADC1_IN13_ADC2_IN5_dual_start(void);
 void ADC2_IN13_IN5_scan_init(void);
 void ADC2_IN13_IN5_scan_start(void);
 void ADC3_IN13_IN4_scan_init(void);
 void ADC3_IN13_IN4_scan_start(void);
-
 void MEAS_show_data(void);
+
+void orderSamples(void);
 
 
 #endif

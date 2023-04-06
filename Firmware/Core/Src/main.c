@@ -19,6 +19,7 @@
 #include "stm32f429i_discovery.h"
 #include "stm32f429i_discovery_lcd.h"
 #include "stm32f429i_discovery_ts.h"
+#include "arm_cfft_init_f32.h"
 
 #include "main.h"
 #include "pushbutton.h"
@@ -26,10 +27,11 @@
 #include "measuring.h"
 
 
+
 /******************************************************************************
  * Defines
  *****************************************************************************/
-
+#define FFT_SIZE 1024
 
 /******************************************************************************
  * Variables
@@ -82,6 +84,9 @@ int main(void) {
 	MEAS_GPIO_analog_init();			// Configure GPIOs in analog mode
 	MEAS_timer_init();					// Configure the timer
 
+	// FFT
+	orderSamples();
+
 	/* Infinite while loop */
 	while (1) {							// Infinitely loop in main function
 		BSP_LED_Toggle(LED3);			// Visual feedback when running
@@ -109,19 +114,13 @@ int main(void) {
 		case MENU_NONE:					// No transition => do nothing
 			break;
 		case MENU_ZERO:
-			ADC3_IN4_single_init();
-			ADC3_IN4_single_read();
 			break;
 		case MENU_ONE:
-			ADC3_IN4_timer_init();
-			ADC3_IN4_timer_start();
 			break;
 		case MENU_TWO:
-			ADC3_IN4_DMA_init();
-			ADC3_IN4_DMA_start();
 			break;
 		case MENU_THREE:
-			ADC1_IN13_ADC2_IN5_dual_init();
+			ADC1_IN13_ADC2_IN11_dual_init();
 			ADC1_IN13_ADC2_IN5_dual_start();
 			break;
 		case MENU_FOUR:
@@ -129,8 +128,6 @@ int main(void) {
 			ADC2_IN13_IN5_scan_start();
 			break;
 		case MENU_FIVE:
-			ADC3_IN13_IN4_scan_init();
-			ADC3_IN13_IN4_scan_start();
 			break;
 		default:						// Should never occur
 			break;
