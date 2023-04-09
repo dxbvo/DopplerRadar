@@ -36,6 +36,7 @@
 /******************************************************************************
  * Variables
  *****************************************************************************/
+static arm_cfft_instance_f32 fftInstance;
 
 
 /******************************************************************************
@@ -86,6 +87,12 @@ int main(void) {
 
 	// FFT
 	orderSamples();
+    
+    // Initialise the FFT instance
+    arm_cfft_init_f32(&fftInstance, FFT_SIZE);
+
+    // Perform the FFT, 1 indicates forward FFT, 0 is not used
+    arm_cfft_f32(&fftInstance, fftInput, 0, 1);
 
 	/* Infinite while loop */
 	while (1) {							// Infinitely loop in main function
