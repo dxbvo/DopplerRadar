@@ -20,19 +20,21 @@
 #include "stm32f429i_discovery_lcd.h"
 #include "stm32f429i_discovery_ts.h"
 #include "arm_cfft_init_f32.h"
+#include <stdio.h>
 
 #include "main.h"
 #include "pushbutton.h"
 #include "menu.h"
 #include "measuring.h"
-
+#include <arm_math.h>
 
 
 /******************************************************************************
  * Defines
  *****************************************************************************/
-#define FFT_SIZE 1024
-
+#define FFT_SIZE 128
+#define c 299792458
+#define fc 24000000000
 /******************************************************************************
  * Variables
  *****************************************************************************/
@@ -85,14 +87,8 @@ int main(void) {
 	MEAS_GPIO_analog_init();			// Configure GPIOs in analog mode
 	MEAS_timer_init();					// Configure the timer
 
-	// FFT
-	orderSamples();
-    
-    // Initialise the FFT instance
+    // Initialize the FFT instance
     arm_cfft_init_f32(&fftInstance, FFT_SIZE);
-
-    // Perform the FFT, 1 indicates forward FFT, 0 is not used
-    arm_cfft_f32(&fftInstance, fftInput, 0, 1);
 
 	/* Infinite while loop */
 	while (1) {							// Infinitely loop in main function
@@ -100,7 +96,32 @@ int main(void) {
 
 		if (MEAS_data_ready) {			// Show data if new data available
 			MEAS_data_ready = false;
-			MEAS_show_data();
+			//MEAS_show_data();
+
+			// test array (use ADC_samples instead of testArray when not testing)
+			float32_t testArray[64];
+		    for (int i = 0; i < 64; i++) {
+		    	testArray[i] = (float32_t)i / 10.0f;
+		    }
+
+		    // Perform the FFT, 1 indicates forward FFT, 0 is not used
+		    arm_cfft_f32(&fftInstance, testArray, 0, 1);
+
+		    // print highest value in ADC_samples
+		    int arr_size = sizeof(testArray) / sizeof(float32_t);
+		    int max_val = testArray[0];
+
+		    // get max value which corresponds to Doppler frequency
+		    for (int i = 1; i < arr_size; i++) {
+		        if (testArray[i] > max_val) {
+		            max_val = testArray[i];
+		        }
+		    }
+
+		    // Calculate velocity
+		    int lambda = c / fc;
+		    int v = (max_val*lambda) / 2;
+
 		}
 
 		if (PB_pressed()) {				// Check if user pushbutton was pressed
@@ -121,6 +142,10 @@ int main(void) {
 		case MENU_NONE:					// No transition => do nothing
 			break;
 		case MENU_ZERO:
+			ADC1_IN13_ADC2_IN11_dual_init();
+			ADC1_IN13_ADC2_IN11_dual_start();
+			DMA2_Stream4_IRQHandler();
+
 			break;
 		case MENU_ONE:
 			break;
@@ -128,11 +153,9 @@ int main(void) {
 			break;
 		case MENU_THREE:
 			ADC1_IN13_ADC2_IN11_dual_init();
-			ADC1_IN13_ADC2_IN5_dual_start();
+			ADC1_IN13_ADC2_IN11_dual_start();
 			break;
 		case MENU_FOUR:
-			ADC2_IN13_IN5_scan_init();
-			ADC2_IN13_IN5_scan_start();
 			break;
 		case MENU_FIVE:
 			break;

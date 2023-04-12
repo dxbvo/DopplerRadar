@@ -14,7 +14,7 @@
  * Includes
  *****************************************************************************/
 #include <stdbool.h>
-
+#include <arm_math.h>
 
 /******************************************************************************
  * Defines
@@ -22,6 +22,10 @@
 extern bool MEAS_data_ready;
 extern uint32_t MEAS_input_count;
 extern bool DAC_active;
+//extern int ADC_NUMS;
+
+// changed defined extern varibles
+//extern int32_t pad_left[ADC_NUMS], pad_right[ADC_NUMS], coil_left[ADC_NUMS], coil_right[ADC_NUMS];
 
 
 /******************************************************************************
@@ -40,14 +44,17 @@ void ADC3_IN4_timer_start(void);
 void ADC3_IN4_DMA_init(void);
 void ADC3_IN4_DMA_start(void);
 void ADC1_IN13_ADC2_IN11_dual_init(void);
-void ADC1_IN13_ADC2_IN5_dual_start(void);
+void ADC1_IN13_ADC2_IN11_dual_start(void);
 void ADC2_IN13_IN5_scan_init(void);
 void ADC2_IN13_IN5_scan_start(void);
 void ADC3_IN13_IN4_scan_init(void);
 void ADC3_IN13_IN4_scan_start(void);
+void DMA2_Stream4_IRQHandler(void);
+
 void MEAS_show_data(void);
 
-void orderSamples(void);
+extern float32_t ADC_samples[64];
+
 
 
 #endif

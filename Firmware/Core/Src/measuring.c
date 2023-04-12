@@ -62,12 +62,13 @@
 #include "stm32f429i_discovery_ts.h"
 
 #include "measuring.h"
+#include <arm_math.h>
 
 /******************************************************************************
  * Defines
  *****************************************************************************/
 #define ADC_DAC_RES		12			///< Resolution
-#define ADC_NUMS		60			///< Number of samples
+#define ADC_NUMS		64			///< Number of samples
 #define ADC_FS			600	///< Sampling freq. => 12 samples for a 50Hz period
 #define ADC_CLOCK		84000000	///< APB2 peripheral clock frequency
 #define ADC_CLOCKS_PS	15			///< Clocks/sample: 3 hold + 12 conversion
@@ -84,22 +85,12 @@ uint32_t MEAS_input_count = 1;			///< 1 or 2 input channels?
 bool DAC_active = false;				///< DAC output active?
 
 static uint32_t ADC_sample_count = 0;	///< Index for buffer
-static uint32_t ADC_samples[2*ADC_NUMS];///< ADC values of max. 2 input channels
+float32_t ADC_samples[ADC_NUMS];///< ADC values of max. 2 input channels
 static uint32_t DAC_sample = 0;			///< DAC output value
-
-static uint32_t FFTReadySamples[2*sizeof(ADC_samples)];
 
 /******************************************************************************
  * Functions
  *****************************************************************************/
-
-void orderSamples(void) {
-
-	for (uint32_t i = 0; i < ADC_NUMS; i++) {
-		FFTReadySamples[2*i] = ADC_samples[i];
-		FFTReadySamples[2*i+1] = ADC_samples[i];
-	}
-}
 
 /** ***************************************************************************
  * @brief Configure GPIOs in analog mode.
@@ -232,7 +223,7 @@ void ADC1_IN13_ADC2_IN11_dual_init(void)
  * @brief Start DMA, ADC and timer
  *
  *****************************************************************************/
-void ADC1_IN13_ADC2_IN5_dual_start(void)
+void ADC1_IN13_ADC2_IN11_dual_start(void)
 {
 	DMA2_Stream4->CR |= DMA_SxCR_EN;	// Enable DMA
 	NVIC_ClearPendingIRQ(DMA2_Stream4_IRQn);	// Clear pending DMA interrupt
@@ -334,52 +325,6 @@ void ADC_IRQHandler(void)
 
 
 /** ***************************************************************************
- * @brief Interrupt handler for DMA2 Stream1
- *
- * The samples from the ADC3 have been transfered to memory by the DMA2 Stream1
- * and are ready for processing.
- *****************************************************************************/
-void DMA2_Stream1_IRQHandler(void)
-{
-	if (DMA2->LISR & DMA_LISR_TCIF1) {	// Stream1 transfer compl. interrupt f.
-		NVIC_DisableIRQ(DMA2_Stream1_IRQn);	// Disable DMA interrupt in the NVIC
-		NVIC_ClearPendingIRQ(DMA2_Stream1_IRQn);// Clear pending DMA interrupt
-		DMA2_Stream1->CR &= ~DMA_SxCR_EN;	// Disable the DMA
-		while (DMA2_Stream1->CR & DMA_SxCR_EN) { ; }	// Wait for DMA to finish
-		DMA2->LIFCR |= DMA_LIFCR_CTCIF1;// Clear transfer complete interrupt fl.
-		TIM2->CR1 &= ~TIM_CR1_CEN;		// Disable timer
-		ADC3->CR2 &= ~ADC_CR2_ADON;		// Disable ADC3
-		ADC3->CR2 &= ~ADC_CR2_DMA;		// Disable DMA mode
-		ADC_reset();
-		MEAS_data_ready = true;
-	}
-}
-
-
-/** ***************************************************************************
- * @brief Interrupt handler for DMA2 Stream3
- *
- * The samples from the ADC3 have been transfered to memory by the DMA2 Stream1
- * and are ready for processing.
- *****************************************************************************/
-void DMA2_Stream3_IRQHandler(void)
-{
-	if (DMA2->LISR & DMA_LISR_TCIF3) {	// Stream3 transfer compl. interrupt f.
-		NVIC_DisableIRQ(DMA2_Stream3_IRQn);	// Disable DMA interrupt in the NVIC
-		NVIC_ClearPendingIRQ(DMA2_Stream3_IRQn);// Clear pending DMA interrupt
-		DMA2_Stream3->CR &= ~DMA_SxCR_EN;	// Disable the DMA
-		while (DMA2_Stream3->CR & DMA_SxCR_EN) { ; }	// Wait for DMA to finish
-		DMA2->LIFCR |= DMA_LIFCR_CTCIF3;// Clear transfer complete interrupt fl.
-		TIM2->CR1 &= ~TIM_CR1_CEN;		// Disable timer
-		ADC2->CR2 &= ~ADC_CR2_ADON;		// Disable ADC2
-		ADC2->CR2 &= ~ADC_CR2_DMA;		// Disable DMA mode
-		ADC_reset();
-		MEAS_data_ready = true;
-	}
-}
-
-
-/** ***************************************************************************
  * @brief Interrupt handler for DMA2 Stream4
  *
  * Here the interrupt handler is used together with ADC1 and ADC2
@@ -403,9 +348,9 @@ void DMA2_Stream4_IRQHandler(void)
 		ADC2->CR2 &= ~ADC_CR2_ADON;		// Disable ADC2
 		ADC->CCR &= ~ADC_CCR_DMA_1;		// Disable DMA mode
 		/* Extract combined samples */
-		for (int32_t i = ADC_NUMS-1; i >= 0; i--){
-			ADC_samples[2*i+1] = (ADC_samples[i] >> 16);
-			ADC_samples[2*i]   = (ADC_samples[i] & 0xffff);
+		for (int32_t i = ADC_NUMS-1; i >= 0; i--) {
+		    ADC_samples[2*i+1] = (*(int32_t*)&ADC_samples[i] >> 16);
+		    ADC_samples[2*i]   = (*(int32_t*)&ADC_samples[i] & 0xffff);
 		}
 		ADC_reset();
 		MEAS_data_ready = true;
