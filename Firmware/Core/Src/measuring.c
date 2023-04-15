@@ -60,8 +60,8 @@
 #include "stm32f429i_discovery.h"
 #include "stm32f429i_discovery_lcd.h"
 #include "stm32f429i_discovery_ts.h"
-
 #include "measuring.h"
+#include "main.h"
 #include <arm_math.h>
 
 /******************************************************************************
@@ -385,30 +385,32 @@ void MEAS_show_data(void)
 	BSP_LCD_SetBackColor(LCD_COLOR_WHITE);
 	BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
 	char text[16];
-	snprintf(text, 15, "1. sample %4d", (int)(ADC_samples[0]));
+	snprintf(text, 15, "velocity:", velocity);
 	BSP_LCD_DisplayStringAt(0, 50, (uint8_t *)text, LEFT_MODE);
-	snprintf(text, 15, "2. sample %4d", (int)(ADC_samples[1]));
-	BSP_LCD_DisplayStringAt(0, 80, (uint8_t *)text, LEFT_MODE);
-	/* Draw the  values of input channel 1 as a curve */
-	BSP_LCD_SetTextColor(LCD_COLOR_BLUE);
-	data = ADC_samples[MEAS_input_count*0] / f;
-	for (uint32_t i = 1; i < ADC_NUMS; i++){
-		data_last = data;
-		data = (ADC_samples[MEAS_input_count*i]) / f;
-		if (data > Y_OFFSET) { data = Y_OFFSET; }// Limit value, prevent crash
-		BSP_LCD_DrawLine(4*(i-1), Y_OFFSET-data_last, 4*i, Y_OFFSET-data);
-	}
-	/* Draw the  values of input channel 2 (if present) as a curve */
-	if (MEAS_input_count == 2) {
-		BSP_LCD_SetTextColor(LCD_COLOR_RED);
-		data = ADC_samples[MEAS_input_count*0+1] / f;
-		for (uint32_t i = 1; i < ADC_NUMS; i++){
-			data_last = data;
-			data = (ADC_samples[MEAS_input_count*i+1]) / f;
-			if (data > Y_OFFSET) { data = Y_OFFSET; }// Limit value, prevent crash
-			BSP_LCD_DrawLine(4*(i-1), Y_OFFSET-data_last, 4*i, Y_OFFSET-data);
-		}
-	}
+
+
+
+//	/* Draw the  values of input channel 1 as a curve */
+//	BSP_LCD_SetTextColor(LCD_COLOR_BLUE);
+//	data = ADC_samples[MEAS_input_count*0] / f;
+//	for (uint32_t i = 1; i < ADC_NUMS; i++){
+//		data_last = data;
+//		data = (ADC_samples[MEAS_input_count*i]) / f;
+//		if (data > Y_OFFSET) { data = Y_OFFSET; }// Limit value, prevent crash
+//		BSP_LCD_DrawLine(4*(i-1), Y_OFFSET-data_last, 4*i, Y_OFFSET-data);
+//	}
+//	/* Draw the  values of input channel 2 (if present) as a curve */
+//	if (MEAS_input_count == 2) {
+//		BSP_LCD_SetTextColor(LCD_COLOR_RED);
+//		data = ADC_samples[MEAS_input_count*0+1] / f;
+//		for (uint32_t i = 1; i < ADC_NUMS; i++){
+//			data_last = data;
+//			data = (ADC_samples[MEAS_input_count*i+1]) / f;
+//			if (data > Y_OFFSET) { data = Y_OFFSET; }// Limit value, prevent crash
+//			BSP_LCD_DrawLine(4*(i-1), Y_OFFSET-data_last, 4*i, Y_OFFSET-data);
+//		}
+//	}
+
 	/* Clear buffer and flag */
 	for (uint32_t i = 0; i < ADC_NUMS; i++){
 		ADC_samples[2*i] = 0;

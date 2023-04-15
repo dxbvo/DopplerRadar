@@ -27,25 +27,25 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000030  00000000  00000000  00040194  2**0
                   CONTENTS, READONLY
- 12 .debug_info   00016fd4  00000000  00000000  000401c4  2**0
+ 12 .debug_info   00016f83  00000000  00000000  000401c4  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 00003748  00000000  00000000  00057198  2**0
+ 13 .debug_abbrev 00003757  00000000  00000000  00057147  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_aranges 00001488  00000000  00000000  0005a8e0  2**3
+ 14 .debug_aranges 00001488  00000000  00000000  0005a8a0  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_ranges 000012a0  00000000  00000000  0005bd68  2**3
+ 15 .debug_ranges 000012a0  00000000  00000000  0005bd28  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  00026d6d  00000000  00000000  0005d008  2**0
+ 16 .debug_macro  00026d76  00000000  00000000  0005cfc8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   00018bcf  00000000  00000000  00083d75  2**0
+ 17 .debug_line   00018b38  00000000  00000000  00083d3e  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000e05af  00000000  00000000  0009c944  2**0
+ 18 .debug_str    000e05b8  00000000  00000000  0009c876  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      000000be  00000000  00000000  0017cef3  2**0
+ 19 .comment      000000be  00000000  00000000  0017ce2e  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00005414  00000000  00000000  0017cfb4  2**2
+ 20 .debug_frame  00005410  00000000  00000000  0017ceec  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_loc    00001908  00000000  00000000  001823c8  2**0
+ 21 .debug_loc    00001908  00000000  00000000  001822fc  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -885,7 +885,7 @@ int main(void) {
 		    int lambda = c / fc;
  80008b2:	2300      	movs	r3, #0
  80008b4:	f8c7 3104 	str.w	r3, [r7, #260]	; 0x104
-		    int v = (max_val*lambda) / 2;
+		    int velocity = (max_val*lambda) / 2;
  80008b8:	f8d7 3110 	ldr.w	r3, [r7, #272]	; 0x110
  80008bc:	f8d7 2104 	ldr.w	r2, [r7, #260]	; 0x104
  80008c0:	fb02 f303 	mul.w	r3, r2, r3

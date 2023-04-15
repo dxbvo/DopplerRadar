@@ -120,7 +120,7 @@ int main(void) {
 
 		    // Calculate velocity
 		    int lambda = c / fc;
-		    int v = (max_val*lambda) / 2;
+		    int velocity = (max_val*lambda) / 2;
 
 		}
 
