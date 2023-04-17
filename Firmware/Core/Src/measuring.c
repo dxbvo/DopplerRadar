@@ -370,38 +370,39 @@ void DMA2_Stream4_IRQHandler(void)
  * and should be moved to a separate file in the final version
  * because displaying is not related to measuring.
  *****************************************************************************/
-void MEAS_show_data(void)
-{
+void MEAS_show_data(void) {
+
+	float32_t v = velocity;
 	const uint32_t Y_OFFSET = 260;
 	const uint32_t X_SIZE = 240;
+
 	const uint32_t f = (1 << ADC_DAC_RES) / Y_OFFSET + 1;	// Scaling factor
 	uint32_t data;
 	uint32_t data_last;
+
 	/* Clear the display */
 	BSP_LCD_SetTextColor(LCD_COLOR_WHITE);
 	BSP_LCD_FillRect(0, 0, X_SIZE, Y_OFFSET+1);
 	/* Write first 2 samples as numbers */
-	BSP_LCD_SetFont(&Font24);
+	BSP_LCD_SetFont(&Font16);
 	BSP_LCD_SetBackColor(LCD_COLOR_WHITE);
 	BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
-	char text[16];
-	snprintf(text, 15, "velocity:", velocity);
-	BSP_LCD_DisplayStringAt(0, 50, (uint8_t *)text, LEFT_MODE);
-
-
+	char text[50];
+	snprintf(text, 50, "velocity: %.1f m/s", v);
+	BSP_LCD_DisplayStringAt(0, 50, (uint8_t *)text, CENTER_MODE);
 
 //	/* Draw the  values of input channel 1 as a curve */
 //	BSP_LCD_SetTextColor(LCD_COLOR_BLUE);
-//	data = ADC_samples[MEAS_input_count*0] / f;
+//	data = testArray[MEAS_input_count*0] / f;
 //	for (uint32_t i = 1; i < ADC_NUMS; i++){
 //		data_last = data;
-//		data = (ADC_samples[MEAS_input_count*i]) / f;
+//		data = (testArray[MEAS_input_count*i]) / f;
 //		if (data > Y_OFFSET) { data = Y_OFFSET; }// Limit value, prevent crash
 //		BSP_LCD_DrawLine(4*(i-1), Y_OFFSET-data_last, 4*i, Y_OFFSET-data);
 //	}
 //	/* Draw the  values of input channel 2 (if present) as a curve */
 //	if (MEAS_input_count == 2) {
-//		BSP_LCD_SetTextColor(LCD_COLOR_RED);
+//		BSP_LCD_SetTextColor(LCD_COLOR_RED);1
 //		data = ADC_samples[MEAS_input_count*0+1] / f;
 //		for (uint32_t i = 1; i < ADC_NUMS; i++){
 //			data_last = data;

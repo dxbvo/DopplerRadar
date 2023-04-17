@@ -33,13 +33,14 @@
  * Defines
  *****************************************************************************/
 #define FFT_SIZE 128
-#define c 299792458
-#define fc 24000000000
+#define SPEED_OF_LIGHT 299792458.0
+#define TRANSMIT_FREQUENCY 24000000000.0
 /******************************************************************************
  * Variables
  *****************************************************************************/
 static arm_cfft_instance_f32 fftInstance;
-
+float32_t velocity;
+float32_t testArray[256];
 
 /******************************************************************************
  * Functions
@@ -96,20 +97,21 @@ int main(void) {
 
 		if (MEAS_data_ready) {			// Show data if new data available
 			MEAS_data_ready = false;
-			//MEAS_show_data();
 
 			// test array (use ADC_samples instead of testArray when not testing)
-			float32_t testArray[64];
-		    for (int i = 0; i < 64; i++) {
+		    for (int i = 0; i < 256; i++) {
 		    	testArray[i] = (float32_t)i / 10.0f;
 		    }
 
 		    // Perform the FFT, 1 indicates forward FFT, 0 is not used
 		    arm_cfft_f32(&fftInstance, testArray, 0, 1);
 
+		    // magnitude calculation
+		    arm_cmplx_mag_f32(testArray, testArray, FFT_SIZE);
+
 		    // print highest value in ADC_samples
 		    int arr_size = sizeof(testArray) / sizeof(float32_t);
-		    int max_val = testArray[0];
+		    float32_t max_val = testArray[0];
 
 		    // get max value which corresponds to Doppler frequency
 		    for (int i = 1; i < arr_size; i++) {
@@ -118,10 +120,10 @@ int main(void) {
 		        }
 		    }
 
-		    // Calculate velocity
-		    int lambda = c / fc;
-		    int velocity = (max_val*lambda) / 2;
-
+		    // Calculate velocity in m/s
+		    float32_t lambda = SPEED_OF_LIGHT / TRANSMIT_FREQUENCY;
+		    velocity = (max_val*lambda) / 2.0f;
+		    MEAS_show_data();
 		}
 
 		if (PB_pressed()) {				// Check if user pushbutton was pressed
