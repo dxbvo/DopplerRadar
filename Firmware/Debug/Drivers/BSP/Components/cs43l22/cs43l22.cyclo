@@ -1,0 +1,13 @@
+cs43l22.c:133:10:cs43l22_Init	6
+cs43l22.c:217:6:cs43l22_DeInit	1
+cs43l22.c:228:10:cs43l22_ReadID	1
+cs43l22.c:246:10:cs43l22_Play	2
+cs43l22.c:272:10:cs43l22_Pause	1
+cs43l22.c:291:10:cs43l22_Resume	2
+cs43l22.c:319:10:cs43l22_Stop	1
+cs43l22.c:344:10:cs43l22_SetVolume	3
+cs43l22.c:371:10:cs43l22_SetFrequency	1
+cs43l22.c:383:10:cs43l22_SetMute	2
+cs43l22.c:412:10:cs43l22_SetOutputMode	5
+cs43l22.c:451:10:cs43l22_Reset	1
+cs43l22.c:463:16:CODEC_IO_Write	1

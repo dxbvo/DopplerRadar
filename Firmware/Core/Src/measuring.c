@@ -92,6 +92,10 @@ static uint32_t DAC_sample = 0;			///< DAC output value
  * Functions
  *****************************************************************************/
 
+float32_t roundToAccuracy(float32_t num) {
+    return roundf(num / 0.3f) * 0.3f;
+}
+
 /** ***************************************************************************
  * @brief Configure GPIOs in analog mode.
  *
@@ -376,9 +380,9 @@ void MEAS_show_data(void) {
 	const uint32_t Y_OFFSET = 260;
 	const uint32_t X_SIZE = 240;
 
-	const uint32_t f = (1 << ADC_DAC_RES) / Y_OFFSET + 1;	// Scaling factor
-	uint32_t data;
-	uint32_t data_last;
+//	const uint32_t f = (1 << ADC_DAC_RES) / Y_OFFSET + 1;	// Scaling factor
+//	uint32_t data;
+//	uint32_t data_last;
 
 	/* Clear the display */
 	BSP_LCD_SetTextColor(LCD_COLOR_WHITE);
@@ -388,7 +392,7 @@ void MEAS_show_data(void) {
 	BSP_LCD_SetBackColor(LCD_COLOR_WHITE);
 	BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
 	char text[50];
-	snprintf(text, 50, "velocity: %.1f m/s", v);
+	snprintf(text, 50, "velocity: %.1f km/h", v);
 	BSP_LCD_DisplayStringAt(0, 50, (uint8_t *)text, CENTER_MODE);
 
 //	/* Draw the  values of input channel 1 as a curve */

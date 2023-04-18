@@ -1,23 +1,27 @@
-% ============================================================
-% Test Signal Generator
-% 20s complex CW signal with frequency fd at fs = 48 kHz
-% left: sin-signal and right: cos-signal (or viec versa) 
-% ============================================================
 clear; close all; clc;
 
-% Parameter
-% ============================================================
-fs = 48e3;      % samplin frequency
-fd = 160;      % Doppler frequency
-N = 20*fs;      % number of samples for 20s long signal
+% test array x
+x = single(0:255) / 10.0;
+FFT_SIZE = 128;
+SPEED_OF_LIGHT = 299792458.0;
+TRANSMIT_FREQUENCY = 24000000000.0;
 
-% test signal
-% ============================================================
-t = [0:N-1]/fs; 
-x(:,1) = real(0.5*exp(-j*2*pi*fd*t));
-x(:,2) = imag(0.5*exp(-j*2*pi*fd*t));
+% Perform FFT
+X = fft(x);
 
-sound(x,fs); % to stop use "clear sound"
+% Calculate magnitude
+magX = abs(X);
 
-%% Write to a file
-writematrix('x.csv', x);
+% Find max value
+[max_val, max_index] = max(magX);
+
+% Calculate velocity
+lambda = SPEED_OF_LIGHT / TRANSMIT_FREQUENCY;
+velocity = (max_val*lambda) / 2.0;
+
+% Display velocity
+disp(['Velocity: ', num2str(velocity), ' m/s']);
+
+
+
+

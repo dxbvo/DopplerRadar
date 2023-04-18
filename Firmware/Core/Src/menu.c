@@ -24,9 +24,7 @@
 #include "stm32f429i_discovery.h"
 #include "stm32f429i_discovery_lcd.h"
 #include "stm32f429i_discovery_ts.h"
-
 #include "main.h"
-
 #include "menu.h"
 
 
@@ -35,7 +33,7 @@
  *****************************************************************************/
 #define MENU_FONT				&Font12	///< Possible font sizes: 8 12 16 20 24
 #define MENU_HEIGHT				40		///< Height of menu bar
-#define MENU_MARGIN				2		///< Margin around a menu entry
+#define MENU_MARGIN				4		///< Margin around a menu entry
 /** Position of menu bar: 0 = top, (BSP_LCD_GetYSize()-MENU_HEIGHT) = bottom */
 #define MENU_Y					(BSP_LCD_GetYSize()-MENU_HEIGHT)
 
@@ -45,12 +43,12 @@
  *****************************************************************************/
 static MENU_item_t MENU_transition = MENU_NONE;	///< Transition to this menu
 static MENU_entry_t MENU_entry[MENU_ENTRY_COUNT] = {
-		{"sin-",	"gle",		LCD_COLOR_BLACK,	LCD_COLOR_LIGHTBLUE},
-		{"Timer",	"+IRQ",		LCD_COLOR_BLACK,	LCD_COLOR_LIGHTGREEN},
-		{"DMA",	    "+IRQ",		LCD_COLOR_BLACK,	LCD_COLOR_LIGHTRED},
-		{"DMA",	    "dual",		LCD_COLOR_BLACK,	LCD_COLOR_LIGHTCYAN},
-		{"DMA",	    "scan",		LCD_COLOR_BLACK,	LCD_COLOR_LIGHTMAGENTA},
-		{"DMA",	    "scan_",	LCD_COLOR_BLACK,	LCD_COLOR_LIGHTYELLOW}
+		{"start",	"",		LCD_COLOR_BLACK,	LCD_COLOR_LIGHTBLUE}
+//		{"Timer",	"+IRQ",		LCD_COLOR_BLACK,	LCD_COLOR_LIGHTGREEN},
+//		{"DMA",	    "+IRQ",		LCD_COLOR_BLACK,	LCD_COLOR_LIGHTRED},
+//		{"DMA",	    "dual",		LCD_COLOR_BLACK,	LCD_COLOR_LIGHTCYAN},
+//		{"DMA",	    "scan",		LCD_COLOR_BLACK,	LCD_COLOR_LIGHTMAGENTA},
+//		{"DMA",	    "scan_",	LCD_COLOR_BLACK,	LCD_COLOR_LIGHTYELLOW}
 };										///< All the menu entries
 
 
@@ -80,10 +78,8 @@ void MENU_draw(void)
 		BSP_LCD_FillRect(x+m, y+m, w-2*m, h-2*m);
 		BSP_LCD_SetBackColor(MENU_entry[i].back_color);
 		BSP_LCD_SetTextColor(MENU_entry[i].text_color);
-		BSP_LCD_DisplayStringAt(x+3*m, y+3*m,
-				(uint8_t *)MENU_entry[i].line1, LEFT_MODE);
-		BSP_LCD_DisplayStringAt(x+3*m, y+h/2,
-				(uint8_t *)MENU_entry[i].line2, LEFT_MODE);
+		BSP_LCD_DisplayStringAt(x+3*m, y+3*m,(uint8_t *)MENU_entry[i].line1, CENTER_MODE);
+//		BSP_LCD_DisplayStringAt(x+3*m, y+h/2,(uint8_t *)MENU_entry[i].line2, LEFT_MODE);
 	}
 }
 
@@ -97,14 +93,14 @@ void MENU_hint(void)
 	BSP_LCD_SetBackColor(LCD_COLOR_WHITE);
 	BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
 	BSP_LCD_SetFont(&Font24);
-	BSP_LCD_DisplayStringAt(5,10, (uint8_t *)"DEMO-CODE", LEFT_MODE);
+	BSP_LCD_DisplayStringAt(5,10, (uint8_t *)"Doppler Radar", CENTER_MODE);
 	BSP_LCD_SetFont(&Font16);
-	BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Touch a menu item", LEFT_MODE);
-	BSP_LCD_DisplayStringAt(5, 80, (uint8_t *)"to start an ADC demo", LEFT_MODE);
-	BSP_LCD_DisplayStringAt(5, 110, (uint8_t *)"Switch DAC on/off", LEFT_MODE);
-	BSP_LCD_DisplayStringAt(5, 130, (uint8_t *)"with blue pushbutton", LEFT_MODE);
-	BSP_LCD_DisplayStringAt(5, 160, (uint8_t *)"(c) hhrt@zhaw.ch", LEFT_MODE);
-	BSP_LCD_DisplayStringAt(5, 160, (uint8_t *)"Version 27.09.2022", LEFT_MODE);
+	BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Press \"start\" button", LEFT_MODE);
+	BSP_LCD_DisplayStringAt(5, 80, (uint8_t *)"to start measurement", LEFT_MODE);
+//	BSP_LCD_DisplayStringAt(5, 110, (uint8_t *)"Switch DAC on/off", LEFT_MODE);
+//	BSP_LCD_DisplayStringAt(5, 130, (uint8_t *)"with blue pushbutton", LEFT_MODE);
+//	BSP_LCD_DisplayStringAt(5, 160, (uint8_t *)"(c) hhrt@zhaw.ch", LEFT_MODE);
+//	BSP_LCD_DisplayStringAt(5, 160, (uint8_t *)"Version 27.09.2022", LEFT_MODE);
 }
 
 

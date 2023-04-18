@@ -1,0 +1,12 @@
+l3gd20.c:119:6:L3GD20_Init	1
+l3gd20.c:142:6:L3GD20_DeInit	1
+l3gd20.c:151:9:L3GD20_ReadID	1
+l3gd20.c:170:6:L3GD20_RebootCmd	1
+l3gd20.c:189:6:L3GD20_LowPower	1
+l3gd20.c:203:6:L3GD20_INT1InterruptConfig	1
+l3gd20.c:234:6:L3GD20_EnableIT	3
+l3gd20.c:264:6:L3GD20_DisableIT	3
+l3gd20.c:291:6:L3GD20_FilterConfig	1
+l3gd20.c:315:6:L3GD20_FilterCmd	1
+l3gd20.c:335:9:L3GD20_GetDataStatus	1
+l3gd20.c:350:6:L3GD20_ReadXYZAngRate	9

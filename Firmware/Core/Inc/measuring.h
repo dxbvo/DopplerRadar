@@ -50,8 +50,8 @@ void ADC2_IN13_IN5_scan_start(void);
 void ADC3_IN13_IN4_scan_init(void);
 void ADC3_IN13_IN4_scan_start(void);
 void DMA2_Stream4_IRQHandler(void);
-
 void MEAS_show_data(void);
+float32_t roundToAccuracy(float32_t);
 
 extern float32_t ADC_samples[64];
 

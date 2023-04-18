@@ -123,6 +123,11 @@ int main(void) {
 		    // Calculate velocity in m/s
 		    float32_t lambda = SPEED_OF_LIGHT / TRANSMIT_FREQUENCY;
 		    velocity = (max_val*lambda) / 2.0f;
+
+		    // convert to m/s to km/h and round to accuracy
+		    velocity = velocity*3.6;
+		    velocity = roundToAccuracy(velocity);
+
 		    MEAS_show_data();
 		}
 
