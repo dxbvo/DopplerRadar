@@ -236,7 +236,6 @@ void ADC1_IN13_ADC2_IN11_dual_start(void)
 	TIM2->CR1 |= TIM_CR1_CEN;			// Enable timer
 }
 
-
 /** ***************************************************************************
  * @brief Initialize ADC, timer and DMA for sequential acquisition = scan mode
  *

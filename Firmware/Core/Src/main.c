@@ -32,7 +32,7 @@
 /******************************************************************************
  * Defines
  *****************************************************************************/
-#define FFT_SIZE 32
+#define FFT_SIZE 64
 #define SPEED_OF_LIGHT 299792458.0
 #define TRANSMIT_FREQUENCY 24000000000.0
 /******************************************************************************
@@ -43,8 +43,8 @@ float32_t velocity;
 float32_t testArray[2*FFT_SIZE];
 static float32_t testOutput[FFT_SIZE];
 
-float32_t sound[] = {
-		#include "sound.csv"
+float32_t testData[] = {
+		#include "testData.csv"
 };
 
 /******************************************************************************
@@ -102,20 +102,14 @@ int main(void) {
 		if (MEAS_data_ready) {			// Show data if new data available
 			MEAS_data_ready = false;
 
-			// test array (use ADC_samples instead of testArray when not testing)
-//		    for (int i = 0; i < 128; i++) {
-//		    	testArray[i] = (float32_t)i / 10.0f;
-//		    }
-
 		    // Perform the FFT, 0 indicates forward FFT, 0 disables bit reversal of output
-		    arm_cfft_f32(&fftInstance, ADC_samples, 0, 1);
+		    arm_cfft_f32(&fftInstance, testData, 0, 1);
 
 		    // magnitude calculation
-		    arm_cmplx_mag_f32(ADC_samples, testOutput, FFT_SIZE); // testOutput
+		    arm_cmplx_mag_f32(testData, testOutput, FFT_SIZE);
 
 		    // print highest value in ADC_samples
-		    // int arr_size = sizeof(testOutput) / sizeof(float32_t);
-		    int arr_size = sizeof(testOutput);
+		    int arr_size = sizeof(testOutput) / sizeof(float32_t);
 		    float32_t max_val = testOutput[0];
 
 		    // get max value which corresponds to Doppler frequency

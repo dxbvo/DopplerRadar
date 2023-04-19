@@ -10,9 +10,9 @@
 ../Core/Src/measuring.c:170:6:MEAS_timer_init	16	static
 ../Core/Src/measuring.c:198:6:ADC1_IN13_ADC2_IN11_dual_init	24	static
 ../Core/Src/measuring.c:229:6:ADC1_IN13_ADC2_IN11_dual_start	8	static
-../Core/Src/measuring.c:251:6:ADC2_IN13_IN5_scan_init	16	static
-../Core/Src/measuring.c:282:6:ADC2_IN13_IN5_scan_start	8	static
-../Core/Src/measuring.c:300:6:TIM2_IRQHandler	8	static
-../Core/Src/measuring.c:315:6:ADC_IRQHandler	8	static
-../Core/Src/measuring.c:341:6:DMA2_Stream4_IRQHandler	16	static
-../Core/Src/measuring.c:376:6:MEAS_show_data	88	static
+../Core/Src/measuring.c:250:6:ADC2_IN13_IN5_scan_init	16	static
+../Core/Src/measuring.c:281:6:ADC2_IN13_IN5_scan_start	8	static
+../Core/Src/measuring.c:299:6:TIM2_IRQHandler	8	static
+../Core/Src/measuring.c:314:6:ADC_IRQHandler	8	static
+../Core/Src/measuring.c:340:6:DMA2_Stream4_IRQHandler	16	static
+../Core/Src/measuring.c:375:6:MEAS_show_data	88	static
