@@ -32,22 +32,26 @@
 /******************************************************************************
  * Defines
  *****************************************************************************/
-#define FFT_SIZE 128
+#define FFT_SIZE 32
 #define SPEED_OF_LIGHT 299792458.0
 #define TRANSMIT_FREQUENCY 24000000000.0
 /******************************************************************************
- * Variables
+ * Variables and Constants
  *****************************************************************************/
 static arm_cfft_instance_f32 fftInstance;
 float32_t velocity;
-float32_t testArray[256];
+float32_t testArray[2*FFT_SIZE];
+static float32_t testOutput[FFT_SIZE];
+
+float32_t sound[] = {
+		#include "sound.csv"
+};
 
 /******************************************************************************
  * Functions
  *****************************************************************************/
 static void SystemClock_Config(void);	///< System Clock Configuration
 static void gyro_disable(void);			///< Disable the onboard gyroscope
-
 
 /** ***************************************************************************
  * @brief  Main function
@@ -99,24 +103,25 @@ int main(void) {
 			MEAS_data_ready = false;
 
 			// test array (use ADC_samples instead of testArray when not testing)
-		    for (int i = 0; i < 256; i++) {
-		    	testArray[i] = (float32_t)i / 10.0f;
-		    }
+//		    for (int i = 0; i < 128; i++) {
+//		    	testArray[i] = (float32_t)i / 10.0f;
+//		    }
 
-		    // Perform the FFT, 1 indicates forward FFT, 0 is not used
-		    arm_cfft_f32(&fftInstance, testArray, 0, 1);
+		    // Perform the FFT, 0 indicates forward FFT, 0 disables bit reversal of output
+		    arm_cfft_f32(&fftInstance, ADC_samples, 0, 1);
 
 		    // magnitude calculation
-		    arm_cmplx_mag_f32(testArray, testArray, FFT_SIZE);
+		    arm_cmplx_mag_f32(ADC_samples, testOutput, FFT_SIZE); // testOutput
 
 		    // print highest value in ADC_samples
-		    int arr_size = sizeof(testArray) / sizeof(float32_t);
-		    float32_t max_val = testArray[0];
+		    // int arr_size = sizeof(testOutput) / sizeof(float32_t);
+		    int arr_size = sizeof(testOutput);
+		    float32_t max_val = testOutput[0];
 
 		    // get max value which corresponds to Doppler frequency
 		    for (int i = 1; i < arr_size; i++) {
-		        if (testArray[i] > max_val) {
-		            max_val = testArray[i];
+		        if (testOutput[i] > max_val) {
+		            max_val = testOutput[i];
 		        }
 		    }
 
@@ -124,7 +129,7 @@ int main(void) {
 		    float32_t lambda = SPEED_OF_LIGHT / TRANSMIT_FREQUENCY;
 		    velocity = (max_val*lambda) / 2.0f;
 
-		    // convert to m/s to km/h and round to accuracy
+		    // convert to m/s to km/h and round to accuracy +/- 0.3
 		    velocity = velocity*3.6;
 		    velocity = roundToAccuracy(velocity);
 

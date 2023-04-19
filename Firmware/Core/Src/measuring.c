@@ -69,11 +69,11 @@
  *****************************************************************************/
 #define ADC_DAC_RES		12			///< Resolution
 #define ADC_NUMS		64			///< Number of samples
-#define ADC_FS			600	///< Sampling freq. => 12 samples for a 50Hz period
+#define ADC_FS			30000		/// fs > 2*maxFrequency, which is 10000Hz
 #define ADC_CLOCK		84000000	///< APB2 peripheral clock frequency
-#define ADC_CLOCKS_PS	15			///< Clocks/sample: 3 hold + 12 conversion
+#define ADC_CLOCKS_PS	18			///< Clocks/sample: 3 hold + 12 conversion
 #define TIM_CLOCK		84000000	///< APB1 timer clock frequency
-#define TIM_TOP			9			///< Timer top value
+#define TIM_TOP			49			///< Timer top value
 #define TIM_PRESCALE	(TIM_CLOCK/ADC_FS/(TIM_TOP+1)-1) ///< Clock prescaler
 
 
@@ -114,7 +114,6 @@ void MEAS_GPIO_analog_init(void)
 	__HAL_RCC_GPIOA_CLK_ENABLE();		// Enable Clock for GPIO port A
 	GPIOA->MODER |= (3UL << GPIO_MODER_MODER5_Pos);	// Analog PA5 ADC12_IN5
 }
-
 
 /** ***************************************************************************
  * @brief Resets the DAC
