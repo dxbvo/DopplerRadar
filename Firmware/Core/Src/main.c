@@ -121,7 +121,7 @@ int main(void) {
 
 		    if (max_index > (ADC_FS / 2)) {
 		    	dopplerFrequency = ADC_FS - dopplerFrequency;
-		    	// dopplerFrequency = - dopplerFrequency;
+		    	// This is the same: dopplerFrequency = - dopplerFrequency;
 		    }
 
 //		    // print highest value in ADC_samples
