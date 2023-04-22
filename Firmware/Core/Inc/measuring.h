@@ -9,6 +9,14 @@
 #ifndef MEAS_H_
 #define MEAS_H_
 
+#ifndef MEASURING_H
+#define MEASURING_H
+
+#define ADC_FS 30000 // fs > 2*maxFrequency, maxFrequency = 10000Hz
+
+#endif /* MEASURING_H */
+
+
 
 /******************************************************************************
  * Includes

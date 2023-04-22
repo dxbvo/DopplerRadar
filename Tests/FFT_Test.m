@@ -7,9 +7,8 @@ clear; close all; clc;
 
 % Parameter
 % ============================================================
-fs = 64;      % samplin frequency
-fd = 10000;      % Doppler frequency
-N = fs;      % number of samples for 20s long signal
+fs = 30000;      % samplin frequency
+N = 64;      % number of samples for 20s long signal
 SPEED_OF_LIGHT = 299792458.0;
 TRANSMIT_FREQUENCY = 24000000000.0;
 
@@ -48,8 +47,10 @@ magX = abs(X);
 [max_val, max_index] = max(magX);
 
 % Calculate velocity
+dopplerFrequency = max_index*(fs/N);
 lambda = SPEED_OF_LIGHT / TRANSMIT_FREQUENCY;
-velocity = (max_val*lambda) / 2.0;
+velocity = (dopplerFrequency*lambda) / 2.0;
+
 
 % Display velocity
 velocity = 3.6*velocity;

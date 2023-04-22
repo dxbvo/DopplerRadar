@@ -69,12 +69,13 @@
  *****************************************************************************/
 #define ADC_DAC_RES		12			///< Resolution
 #define ADC_NUMS		64			///< Number of samples
-#define ADC_FS			30000		/// fs > 2*maxFrequency, which is 10000Hz
 #define ADC_CLOCK		84000000	///< APB2 peripheral clock frequency
 #define ADC_CLOCKS_PS	18			///< Clocks/sample: 3 hold + 12 conversion
 #define TIM_CLOCK		84000000	///< APB1 timer clock frequency
 #define TIM_TOP			49			///< Timer top value
 #define TIM_PRESCALE	(TIM_CLOCK/ADC_FS/(TIM_TOP+1)-1) ///< Clock prescaler
+
+
 
 
 /******************************************************************************

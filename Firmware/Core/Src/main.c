@@ -35,6 +35,8 @@
 #define FFT_SIZE 64
 #define SPEED_OF_LIGHT 299792458.0
 #define TRANSMIT_FREQUENCY 24000000000.0
+
+
 /******************************************************************************
  * Variables and Constants
  *****************************************************************************/
@@ -103,25 +105,39 @@ int main(void) {
 			MEAS_data_ready = false;
 
 		    // Perform the FFT, 0 indicates forward FFT, 0 disables bit reversal of output
-		    arm_cfft_f32(&fftInstance, testData, 0, 1);
+		    arm_cfft_f32(&fftInstance, testData, 0, 0);
 
 		    // magnitude calculation
 		    arm_cmplx_mag_f32(testData, testOutput, FFT_SIZE);
 
-		    // print highest value in ADC_samples
-		    int arr_size = sizeof(testOutput) / sizeof(float32_t);
-		    float32_t max_val = testOutput[0];
+		    // get max value and corresponding index
+		    float32_t max_value;
+		    uint32_t max_index; // index at max value
+		    arm_max_f32(testOutput, FFT_SIZE, &max_value, &max_index);
 
-		    // get max value which corresponds to Doppler frequency
-		    for (int i = 1; i < arr_size; i++) {
-		        if (testOutput[i] > max_val) {
-		            max_val = testOutput[i];
-		        }
+		    // Calculate Doppler frequency
+		    float32_t dopplerFrequency;
+		    dopplerFrequency = (float32_t)(max_index * (ADC_FS / FFT_SIZE));
+
+		    if (max_index > (ADC_FS / 2)) {
+		    	dopplerFrequency = ADC_FS - dopplerFrequency;
+		    	// dopplerFrequency = - dopplerFrequency;
 		    }
+
+//		    // print highest value in ADC_samples
+//		    int arr_size = sizeof(testOutput) / sizeof(float32_t);
+//		    float32_t max_val = testOutput[0];
+//
+//		    // get max value which corresponds to Doppler frequency
+//		    for (int i = 1; i < arr_size; i++) {
+//		        if (testOutput[i] > max_val) {
+//		            max_val = testOutput[i];
+//		        }
+//		    }
 
 		    // Calculate velocity in m/s
 		    float32_t lambda = SPEED_OF_LIGHT / TRANSMIT_FREQUENCY;
-		    velocity = (max_val*lambda) / 2.0f;
+		    velocity = (dopplerFrequency*lambda) / 2.0f;
 
 		    // convert to m/s to km/h and round to accuracy +/- 0.3
 		    velocity = velocity*3.6;
