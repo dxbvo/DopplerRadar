@@ -26,6 +26,8 @@ sig = 0.5*exp(-1i*2*pi*z);
 x(:,1) = real(sig);
 x(:,2) = imag(sig);
 
+sig_short = sig(1:64);
+
 % rearange for arm_cfft_f32()
 newArray = zeros(1, 128);
 index = 1;
@@ -39,7 +41,7 @@ end
 % writematrix(newArray, 'testData.csv');
 
 % Perform FFT
-X = fft(sig);
+X = fft(sig_short);
 
 % Calculate magnitude
 magX = abs(X);

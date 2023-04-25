@@ -165,18 +165,16 @@ int main(void) {
 		case MENU_NONE:					// No transition => do nothing
 			break;
 		case MENU_ZERO:
-			ADC1_IN13_ADC2_IN11_dual_init();
-			ADC1_IN13_ADC2_IN11_dual_start();
-			DMA2_Stream4_IRQHandler();
-
+			ADC1_IN13_ADC2_IN11_dual_init(); // ADC initialize
+			ADC1_IN13_ADC2_IN11_dual_start(); // star sampling
+			DMA2_Stream4_IRQHandler(); // write samples in ADC_samples
+			//MEAS_show_data(); // show ADC_samples I and Q of Doppler Radar
 			break;
 		case MENU_ONE:
 			break;
 		case MENU_TWO:
 			break;
 		case MENU_THREE:
-			ADC1_IN13_ADC2_IN11_dual_init();
-			ADC1_IN13_ADC2_IN11_dual_start();
 			break;
 		case MENU_FOUR:
 			break;
