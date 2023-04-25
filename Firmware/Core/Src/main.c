@@ -110,6 +110,9 @@ int main(void) {
 		    // magnitude calculation
 		    arm_cmplx_mag_f32(testData, testOutput, FFT_SIZE);
 
+		    // set DC value to 0 because we have an offset of 1.4V
+		    testOutput[0] = 0;
+
 		    // get max value and corresponding index
 		    float32_t max_value;
 		    uint32_t max_index; // index at max value

@@ -10,9 +10,8 @@ measuring.c:160:6:ADC_reset	1
 measuring.c:171:6:MEAS_timer_init	1
 measuring.c:199:6:ADC1_IN13_ADC2_IN11_dual_init	2
 measuring.c:230:6:ADC1_IN13_ADC2_IN11_dual_start	1
-measuring.c:251:6:ADC2_IN13_IN5_scan_init	2
-measuring.c:282:6:ADC2_IN13_IN5_scan_start	1
-measuring.c:300:6:TIM2_IRQHandler	2
-measuring.c:315:6:ADC_IRQHandler	3
-measuring.c:341:6:DMA2_Stream4_IRQHandler	4
-measuring.c:376:6:MEAS_show_data	2
+measuring.c:245:6:ADC2_IN13_IN5_scan_start	1
+measuring.c:263:6:TIM2_IRQHandler	2
+measuring.c:278:6:ADC_IRQHandler	3
+measuring.c:304:6:DMA2_Stream4_IRQHandler	4
+measuring.c:339:6:MEAS_show_data	5
