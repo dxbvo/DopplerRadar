@@ -104,8 +104,8 @@ int main(void) {
 		if (MEAS_data_ready) {			// Show data if new data available
 			MEAS_data_ready = false;
 
-		    // Perform the FFT, 0 indicates forward FFT, 0 disables bit reversal of output
-		    arm_cfft_f32(&fftInstance, testData, 0, 0);
+		    // Perform the FFT, 0 indicates forward FFT, 1 enables bit reversal of output
+		    arm_cfft_f32(&fftInstance, testData, 0, 1);
 
 		    // magnitude calculation
 		    arm_cmplx_mag_f32(testData, testOutput, FFT_SIZE);
@@ -117,7 +117,8 @@ int main(void) {
 
 		    // Calculate Doppler frequency
 		    float32_t dopplerFrequency;
-		    dopplerFrequency = (float32_t)(max_index * (ADC_FS / FFT_SIZE));
+		    // new cast
+		    dopplerFrequency = max_index * ((float32_t)ADC_FS / FFT_SIZE);
 
 		    if (max_index > (ADC_FS / 2)) {
 		    	dopplerFrequency = ADC_FS - dopplerFrequency;
