@@ -46,7 +46,7 @@ Core/Src/main.o: ../Core/Src/main.c \
  ../Drivers/BSP/STM32F429I-Discovery/../Components/stmpe811/../Common/io.h \
  ../Core/Inc/arm_cfft_init_f32.h ../Drivers/CMSIS/DSP/Include/arm_math.h \
  ../Core/Inc/main.h ../Core/Inc/pushbutton.h ../Core/Inc/menu.h \
- ../Core/Inc/measuring.h ../Core/Src/testData.csv
+ ../Core/Inc/measuring.h ../Core/Src/testDataPositive.csv
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f429xx.h:
 ../Drivers/CMSIS/Include/core_cm4.h:
@@ -98,4 +98,4 @@ Core/Src/main.o: ../Core/Src/main.c \
 ../Core/Inc/pushbutton.h:
 ../Core/Inc/menu.h:
 ../Core/Inc/measuring.h:
-../Core/Src/testData.csv:
+../Core/Src/testDataPositive.csv:

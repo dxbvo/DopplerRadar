@@ -357,25 +357,25 @@ void MEAS_show_data(void) {
 	snprintf(text, 50, "velocity: %.1f km/h", v);
 	BSP_LCD_DisplayStringAt(0, 50, (uint8_t *)text, CENTER_MODE);
 
-	// Draw the values of odd-indexed elements as a curve
-	    BSP_LCD_SetTextColor(LCD_COLOR_BLUE);
-	    data = ADC_samples[1] / f;
-	    for (uint32_t i = 2; i < ADC_NUMS; i += 2) {
-	        data_last = data;
-	        data = ADC_samples[i+1] / f;
-	        if (data > Y_OFFSET) { data = Y_OFFSET; }
-	        BSP_LCD_DrawLine(4*(i-1), Y_OFFSET-data_last, 4*i, Y_OFFSET-data);
-	    }
+//	// Draw the values of odd-indexed elements as a curve
+//	    BSP_LCD_SetTextColor(LCD_COLOR_BLUE);
+//	    data = ADC_samples[1] / f;
+//	    for (uint32_t i = 2; i < ADC_NUMS; i += 2) {
+//	        data_last = data;
+//	        data = ADC_samples[i+1] / f;
+//	        if (data > Y_OFFSET) { data = Y_OFFSET; }
+//	        BSP_LCD_DrawLine(4*(i-1), Y_OFFSET-data_last, 4*i, Y_OFFSET-data);
+//	    }
 
-	    // Draw the values of even-indexed elements as a curve
-	    BSP_LCD_SetTextColor(LCD_COLOR_RED);
-	    data = ADC_samples[0] / f;
-	    for (uint32_t i = 1; i < ADC_NUMS; i += 2) {
-	        data_last = data;
-	        data = ADC_samples[i+1] / f;
-	        if (data > Y_OFFSET) { data = Y_OFFSET; }
-	        BSP_LCD_DrawLine(4*(i-1), Y_OFFSET-data_last, 4*i, Y_OFFSET-data);
-	    }
+//	    // Draw the values of even-indexed elements as a curve
+//	    BSP_LCD_SetTextColor(LCD_COLOR_RED);
+//	    data = ADC_samples[0] / f;
+//	    for (uint32_t i = 1; i < ADC_NUMS; i += 2) {
+//	        data_last = data;
+//	        data = ADC_samples[i+1] / f;
+//	        if (data > Y_OFFSET) { data = Y_OFFSET; }
+//	        BSP_LCD_DrawLine(4*(i-1), Y_OFFSET-data_last, 4*i, Y_OFFSET-data);
+//	    }
 }
 
 //	/* Draw the  values of input channel 1 as a curve */

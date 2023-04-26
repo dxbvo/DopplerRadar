@@ -14,4 +14,4 @@ measuring.c:245:6:ADC2_IN13_IN5_scan_start	1
 measuring.c:263:6:TIM2_IRQHandler	2
 measuring.c:278:6:ADC_IRQHandler	3
 measuring.c:304:6:DMA2_Stream4_IRQHandler	4
-measuring.c:339:6:MEAS_show_data	5
+measuring.c:339:6:MEAS_show_data	1

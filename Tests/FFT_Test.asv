@@ -22,6 +22,9 @@ for i = 1:128
     z(i) = y(i);
 end
 
+% reverse array
+reversedZ = flip(z);
+
 sig = 0.5*exp(-1i*2*pi*z);
 x(:,1) = real(sig);
 x(:,2) = imag(sig);
@@ -39,7 +42,7 @@ for i = 1:64
 end
 
 % save newArray
-%writematrix(newArray, 'testDataPositive.csv');
+% writematrix(newArray, 'testData.csv');
 
 % Perform FFT
 X = fft(sig_short);
@@ -50,13 +53,8 @@ magX = abs(X);
 % Find max value and corresponding index
 [max_val, max_index] = max(magX);
 
-dopplerFrequency = max_index*(fs/N);
-
-if dopplerFrequency > fs/2
-    dopplerFrequency = -dopplerFrequency;
-end
-
 % Calculate velocity
+dopplerFrequency = max_index*(fs/N);
 lambda = SPEED_OF_LIGHT / TRANSMIT_FREQUENCY;
 velocity = (dopplerFrequency*lambda) / 2.0;
 
@@ -64,5 +62,3 @@ velocity = (dopplerFrequency*lambda) / 2.0;
 % Display velocity
 velocity = 3.6*velocity;
 disp(['Velocity: ', num2str(velocity), ' km/h']);
-
-plot(magX)
