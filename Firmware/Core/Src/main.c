@@ -43,7 +43,7 @@
 arm_cfft_instance_f32 fftInstance;
 float32_t velocity;
 float32_t testArray[2*FFT_SIZE];
-static float32_t testOutput[FFT_SIZE];
+float32_t testOutput[FFT_SIZE];
 
 float32_t testData[] = {
 		#include "testDataNegative.csv"
@@ -105,13 +105,14 @@ int main(void) {
 			MEAS_data_ready = false;
 
 		    // Perform the FFT, 0 indicates forward FFT, 1 enables bit reversal of output
-		    arm_cfft_f32(&fftInstance, ADC_samples, 0, 1);
+		    arm_cfft_f32(&fftInstance, cfft_inout, 0, 1);
 
 		    // magnitude calculation
-		    arm_cmplx_mag_f32(ADC_samples, testOutput, FFT_SIZE);
+		    arm_cmplx_mag_f32(cfft_inout, testOutput, FFT_SIZE);
 
 		    // set DC value to 0 because we have an offset of 1.4V
 		    testOutput[0] = 0;
+		    testOutput[63] = 0;
 
 		    // get max value and corresponding index
 		    float32_t max_value;
@@ -121,11 +122,11 @@ int main(void) {
 		    // Calculate Doppler frequency
 		    float32_t dopplerFrequency;
 		    // new cast
-		    dopplerFrequency = max_index * ((float32_t)ADC_FS / FFT_SIZE);
+		    dopplerFrequency = (float32_t)max_index * ADC_FS / FFT_SIZE;
 
 		    if (dopplerFrequency > (ADC_FS / 2)) {
 		    	//dopplerFrequency = ADC_FS - dopplerFrequency;
-		    	dopplerFrequency = - dopplerFrequency;
+		    	dopplerFrequency = dopplerFrequency;
 		    }
 
 //		    // print highest value in ADC_samples
