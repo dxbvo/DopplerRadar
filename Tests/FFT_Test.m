@@ -22,7 +22,7 @@ for i = 1:128
     z(i) = y(i);
 end
 
-sig = 0.5*exp(-1i*2*pi*z);
+sig = 0.5*exp(1i*2*pi*z);
 x(:,1) = real(sig);
 x(:,2) = imag(sig);
 

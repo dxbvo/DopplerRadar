@@ -46,7 +46,7 @@ float32_t testArray[2*FFT_SIZE];
 static float32_t testOutput[FFT_SIZE];
 
 float32_t testData[] = {
-		#include "testDataPositive.csv"
+		#include "testDataNegative.csv"
 };
 
 /******************************************************************************
