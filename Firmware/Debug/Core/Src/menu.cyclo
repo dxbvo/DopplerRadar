@@ -1,7 +1,0 @@
-menu.c:67:6:MENU_draw	2
-menu.c:91:6:MENU_hint	1
-menu.c:114:6:MENU_set_entry	2
-menu.c:127:14:MENU_get_entry	2
-menu.c:146:13:MENU_get_transition	1
-menu.c:164:6:MENU_check_transition	7
-menu.c:224:6:EXTI15_10_IRQHandler	3

@@ -61,7 +61,7 @@ void DMA2_Stream4_IRQHandler(void);
 void MEAS_show_data(void);
 float32_t roundToAccuracy(float32_t);
 
-extern float32_t ADC_samples[64];
+extern float32_t ADC_samples[128];
 
 
 

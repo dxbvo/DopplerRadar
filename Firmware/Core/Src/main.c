@@ -40,7 +40,7 @@
 /******************************************************************************
  * Variables and Constants
  *****************************************************************************/
-static arm_cfft_instance_f32 fftInstance;
+arm_cfft_instance_f32 fftInstance;
 float32_t velocity;
 float32_t testArray[2*FFT_SIZE];
 static float32_t testOutput[FFT_SIZE];

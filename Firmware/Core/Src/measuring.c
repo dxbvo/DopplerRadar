@@ -86,7 +86,7 @@ uint32_t MEAS_input_count = 1;			///< 1 or 2 input channels?
 bool DAC_active = false;				///< DAC output active?
 
 static uint32_t ADC_sample_count = 0;	///< Index for buffer
-float32_t ADC_samples[ADC_NUMS];        ///< ADC values of max. 2 input channels
+float32_t ADC_samples[2*ADC_NUMS];        ///< ADC values of max. 2 input channels
 static uint32_t DAC_sample = 0;			///< DAC output value
 
 /******************************************************************************
@@ -342,9 +342,9 @@ void MEAS_show_data(void) {
 	const uint32_t Y_OFFSET = 260;
 	const uint32_t X_SIZE = 240;
 
-	const uint32_t f = (1 << ADC_DAC_RES) / Y_OFFSET + 1;	// Scaling factor
-	uint32_t data;
-	uint32_t data_last;
+//	const uint32_t f = (1 << ADC_DAC_RES) / Y_OFFSET + 1;	// Scaling factor
+//	uint32_t data;
+//	uint32_t data_last;
 
 	/* Clear the display */
 	BSP_LCD_SetTextColor(LCD_COLOR_WHITE);
