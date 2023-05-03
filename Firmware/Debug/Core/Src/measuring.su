@@ -14,4 +14,4 @@
 ../Core/Src/measuring.c:264:6:TIM2_IRQHandler	8	static
 ../Core/Src/measuring.c:279:6:ADC_IRQHandler	8	static
 ../Core/Src/measuring.c:305:6:DMA2_Stream4_IRQHandler	16	static
-../Core/Src/measuring.c:342:6:MEAS_show_data	80	static
+../Core/Src/measuring.c:342:6:MEAS_show_data	112	static

@@ -112,7 +112,6 @@ int main(void) {
 
 		    // set DC value to 0 because we have an offset of 1.4V
 		    testOutput[0] = 0;
-		    testOutput[63] = 0;
 
 		    // get max value and corresponding index
 		    float32_t max_value;
@@ -125,20 +124,8 @@ int main(void) {
 		    dopplerFrequency = (float32_t)max_index * ADC_FS / FFT_SIZE;
 
 		    if (dopplerFrequency > (ADC_FS / 2)) {
-		    	//dopplerFrequency = ADC_FS - dopplerFrequency;
-		    	dopplerFrequency = -dopplerFrequency;
+		    	dopplerFrequency = dopplerFrequency - ADC_FS;
 		    }
-
-//		    // print highest value in ADC_samples
-//		    int arr_size = sizeof(testOutput) / sizeof(float32_t);
-//		    float32_t max_val = testOutput[0];
-//
-//		    // get max value which corresponds to Doppler frequency
-//		    for (int i = 1; i < arr_size; i++) {
-//		        if (testOutput[i] > max_val) {
-//		            max_val = testOutput[i];
-//		        }
-//		    }
 
 		    // Calculate velocity in m/s
 		    float32_t lambda = SPEED_OF_LIGHT / TRANSMIT_FREQUENCY;
@@ -149,6 +136,11 @@ int main(void) {
 		    velocity = roundToAccuracy(velocity);
 
 		    MEAS_show_data();
+
+			ADC1_IN13_ADC2_IN11_dual_init(); // ADC initialize
+			ADC1_IN13_ADC2_IN11_dual_start(); // star sampling
+			DMA2_Stream4_IRQHandler(); // write samples in ADC_samples
+
 		}
 
 		if (PB_pressed()) {				// Check if user pushbutton was pressed
@@ -172,7 +164,6 @@ int main(void) {
 			ADC1_IN13_ADC2_IN11_dual_init(); // ADC initialize
 			ADC1_IN13_ADC2_IN11_dual_start(); // star sampling
 			DMA2_Stream4_IRQHandler(); // write samples in ADC_samples
-			//MEAS_show_data(); // show ADC_samples I and Q of Doppler Radar
 			break;
 		case MENU_ONE:
 			break;

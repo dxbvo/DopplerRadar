@@ -18,6 +18,7 @@
  *****************************************************************************/
 extern float32_t velocity;
 extern float32_t testArray[];
+extern float32_t testOutput[];
 
 /** ***************************************************************************
  * Evalboard revision E (blue PCB)

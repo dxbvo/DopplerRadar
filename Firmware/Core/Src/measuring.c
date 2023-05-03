@@ -206,8 +206,8 @@ void ADC1_IN13_ADC2_IN11_dual_init(void)
 	ADC->CCR |= ADC_CCR_MULTI_1 | ADC_CCR_MULTI_2; // ADC1 and ADC2
 	ADC1->CR2 |= (1UL << ADC_CR2_EXTEN_Pos);	// En. ext. trigger on rising e.
 	ADC1->CR2 |= (6UL << ADC_CR2_EXTSEL_Pos);	// Timer 2 TRGO event
-	ADC1->SQR3 |= (13UL << ADC_SQR3_SQ1_Pos);	// Input 13 = first conversion
-	ADC2->SQR3 |= (11UL << ADC_SQR3_SQ1_Pos);	// Input 11 = first conversion
+	ADC1->SQR3 |= (11UL << ADC_SQR3_SQ1_Pos);	// Input 11 = first conversion
+	ADC2->SQR3 |= (13UL << ADC_SQR3_SQ1_Pos);	// Input 13 = first conversion
 	__HAL_RCC_DMA2_CLK_ENABLE();		// Enable Clock for DMA2
 	DMA2_Stream4->CR &= ~DMA_SxCR_EN;	// Disable the DMA stream 4
 	while (DMA2_Stream4->CR & DMA_SxCR_EN) { ; }	// Wait for DMA to finish
@@ -316,8 +316,8 @@ void DMA2_Stream4_IRQHandler(void)
 		ADC->CCR &= ~ADC_CCR_DMA_1;		// Disable DMA mode
 		/* Extract combined samples */
 		for (int32_t i = ADC_NUMS-1; i >= 0; i--) {
-		    ADC_samples[2*i+1] = ADC_samples[i] >> 16;         // (*(int32_t*)& cast für ADC_samples
-		    ADC_samples[2*i]   = ADC_samples[i] & 0xffff;
+		    ADC_samples[2*i+1] = (ADC_samples[i] >> 16);         // (*(int32_t*)& cast für ADC_samples
+		    ADC_samples[2*i]   = (ADC_samples[i] & 0xffff);
 			cfft_inout[2*i+1] = ADC_samples[2*i+1];
 			cfft_inout[2*i]   = ADC_samples[2*i];          // (*(int32_t*)&
 		}
@@ -345,9 +345,9 @@ void MEAS_show_data(void) {
 	const uint32_t Y_OFFSET = 260;
 	const uint32_t X_SIZE = 240;
 
-//	const uint32_t f = (1 << ADC_DAC_RES) / Y_OFFSET + 1;	// Scaling factor
-//	uint32_t data;
-//	uint32_t data_last;
+	const uint32_t f = (1 << ADC_DAC_RES) / Y_OFFSET + 1;	// Scaling factor
+	uint32_t data;
+	uint32_t data_last;
 
 	/* Clear the display */
 	BSP_LCD_SetTextColor(LCD_COLOR_WHITE);
@@ -359,49 +359,44 @@ void MEAS_show_data(void) {
 	char text[50];
 	snprintf(text, 50, "velocity: %.1f km/h", v);
 	BSP_LCD_DisplayStringAt(0, 50, (uint8_t *)text, CENTER_MODE);
+
+	snprintf(text, 50, "I: blue, Q: red");
+	BSP_LCD_DisplayStringAt(0, 70, (uint8_t *)text, CENTER_MODE);
+
+
+	/* Draw the  values of input channel 1 as a curve */
+	BSP_LCD_SetTextColor(LCD_COLOR_BLUE);
+	data = ADC_samples[MEAS_input_count*0] / f;
+	for (uint32_t i = 1; i < ADC_NUMS; i++){
+		data_last = data;
+		data = (ADC_samples[MEAS_input_count*i]) / f;
+		if (data > Y_OFFSET) { data = Y_OFFSET; }// Limit value, prevent crash
+		BSP_LCD_DrawLine(3*(i-1), Y_OFFSET-data_last, 3*i, Y_OFFSET-data);
+	}
+	/* Draw the  values of input channel 2 (if present) as a curve */
+	if (MEAS_input_count == 2) {
+		BSP_LCD_SetTextColor(LCD_COLOR_RED);
+		data = ADC_samples[MEAS_input_count*0+1] / f;
+		for (uint32_t i = 1; i < ADC_NUMS; i++){
+			data_last = data;
+			data = (ADC_samples[MEAS_input_count*i+1]) / f;
+			if (data > Y_OFFSET) { data = Y_OFFSET; }// Limit value, prevent crash
+			BSP_LCD_DrawLine(3*(i-1), Y_OFFSET-data_last, 3*i, Y_OFFSET-data);
+		}
+	}
+
+	BSP_LCD_SetTextColor(LCD_COLOR_GREEN);
+	data = testOutput[0] / (f*9);
+	for (uint32_t i = 1; i < ADC_NUMS; i++){
+		data_last = data;
+		data = (testOutput[i]) / (f*9);
+		if (data > Y_OFFSET) { data = Y_OFFSET; } // Limit value, prevent crash
+		BSP_LCD_DrawLine(3*(i-1), Y_OFFSET-data_last, 3*i, Y_OFFSET-data);
+	}
+
+
+
 }
-	// Draw the values of odd-indexed elements as a curve
-//	    BSP_LCD_SetTextColor(LCD_COLOR_BLUE);
-//	    data = ADC_samples[1] / f;
-//	    for (uint32_t i = 2; i < ADC_NUMS; i += 2) {
-//	        data_last = data;
-//	        data = ADC_samples[i+1] / f;
-//	        if (data > Y_OFFSET) { data = Y_OFFSET; }
-//	        BSP_LCD_DrawLine(4*(i-1), Y_OFFSET-data_last, 4*i, Y_OFFSET-data);
-//	    }
-//
-//	    // Draw the values of even-indexed elements as a curve
-//	    BSP_LCD_SetTextColor(LCD_COLOR_RED);
-//	    data = ADC_samples[0] / f;
-//	    for (uint32_t i = 1; i < ADC_NUMS; i += 2) {
-//	        data_last = data;
-//	        data = ADC_samples[i+1] / f;
-//	        if (data > Y_OFFSET) { data = Y_OFFSET; }
-//	        BSP_LCD_DrawLine(4*(i-1), Y_OFFSET-data_last, 4*i, Y_OFFSET-data);
-//	    }
-
-
-//	/* Draw the  values of input channel 1 as a curve */
-//	BSP_LCD_SetTextColor(LCD_COLOR_BLUE);
-//	data = testArray[MEAS_input_count*0] / f;
-//	for (uint32_t i = 1; i < ADC_NUMS; i++){
-//		data_last = data;
-//		data = (testArray[MEAS_input_count*i]) / f;
-//		if (data > Y_OFFSET) { data = Y_OFFSET; }// Limit value, prevent crash
-//		BSP_LCD_DrawLine(4*(i-1), Y_OFFSET-data_last, 4*i, Y_OFFSET-data);
-//	}
-//	/* Draw the  values of input channel 2 (if present) as a curve */
-//	if (MEAS_input_count == 2) {
-//		BSP_LCD_SetTextColor(LCD_COLOR_RED);1
-//		data = ADC_samples[MEAS_input_count*0+1] / f;
-//		for (uint32_t i = 1; i < ADC_NUMS; i++){
-//			data_last = data;
-//			data = (ADC_samples[MEAS_input_count*i+1]) / f;
-//			if (data > Y_OFFSET) { data = Y_OFFSET; }// Limit value, prevent crash
-//			BSP_LCD_DrawLine(4*(i-1), Y_OFFSET-data_last, 4*i, Y_OFFSET-data);
-//		}
-//	}
-
 
 //	/* Clear buffer and flag */
 //	for (uint32_t i = 0; i < ADC_NUMS; i++){
