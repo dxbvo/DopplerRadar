@@ -21,6 +21,7 @@
 #include "stm32f429i_discovery_ts.h"
 #include "arm_cfft_init_f32.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "main.h"
 #include "pushbutton.h"
@@ -36,7 +37,6 @@
 #define SPEED_OF_LIGHT 299792458.0
 #define TRANSMIT_FREQUENCY 24000000000.0
 
-
 /******************************************************************************
  * Variables and Constants
  *****************************************************************************/
@@ -44,6 +44,10 @@ arm_cfft_instance_f32 fftInstance;
 float32_t velocity;
 float32_t testArray[2*FFT_SIZE];
 float32_t testOutput[FFT_SIZE];
+
+// array for transfering data
+float32_t *maxVelocities = NULL;  	// Initialize array pointer to NULL
+int sizeOfMaxVelocities = 0;  						// Initialize size to 0
 
 float32_t testData[] = {
 		#include "testDataNegative.csv"
@@ -123,6 +127,7 @@ int main(void) {
 		    // new cast
 		    dopplerFrequency = (float32_t)max_index * ADC_FS / FFT_SIZE;
 
+		    // check if dopplerFrequency is in the second Nyquist zone -> > fs/2
 		    if (dopplerFrequency > (ADC_FS / 2)) {
 		    	dopplerFrequency = dopplerFrequency - ADC_FS;
 		    }
@@ -137,8 +142,13 @@ int main(void) {
 
 		    MEAS_show_data();
 
+		    // append velocity to array
+		    maxVelocities = realloc(maxVelocities, (sizeOfMaxVelocities + 1) * sizeof(float32_t));  // Allocate memory for one more element
+		    maxVelocities[sizeOfMaxVelocities++] = velocity;
+
+		    // start measurement again
 			ADC1_IN13_ADC2_IN11_dual_init(); // ADC initialize
-			ADC1_IN13_ADC2_IN11_dual_start(); // star sampling
+			ADC1_IN13_ADC2_IN11_dual_start(); // start sampling
 			DMA2_Stream4_IRQHandler(); // write samples in ADC_samples
 
 		}

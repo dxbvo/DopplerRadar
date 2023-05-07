@@ -1,0 +1,13 @@
+ov5640.c:464:6:ov5640_Init	10
+ov5640.c:522:6:OV5640_SetLightMode	12
+ov5640.c:579:6:OV5640_SetEffect	14
+ov5640.c:667:6:OV5640_SetBrightness	14
+ov5640.c:737:6:OV5640_SetSaturation	13
+ov5640.c:807:6:OV5640_SetContrast	13
+ov5640.c:875:6:OV5640_SetHueDegree	20
+ov5640.c:969:6:OV5640_MirrorFlipConfig	5
+ov5640.c:1012:6:OV5640_ZoomConfig	5
+ov5640.c:1048:9:OV5640_GetResolution	9
+ov5640.c:1089:6:ov5640_Config	5
+ov5640.c:1124:10:ov5640_ReadID	1
+ov5640.c:1151:17:ov5640_ConvertValue	23

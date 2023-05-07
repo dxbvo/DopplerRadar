@@ -1,0 +1,4 @@
+ov2640.c:1046:6:ov2640_Init	9
+ov2640.c:1112:6:ov2640_Config	5
+ov2640.c:1172:10:ov2640_ReadID	1
+ov2640.c:1193:17:ov2640_ConvertValue	23
