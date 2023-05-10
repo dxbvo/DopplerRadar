@@ -17,8 +17,10 @@
  * Defines
  *****************************************************************************/
 extern float32_t velocity;
-extern float32_t testArray[];
-extern float32_t testOutput[];
+extern float32_t testOutput[]; // for drawing the graph
+extern float32_t dopplerFrequency;
+
+
 
 /** ***************************************************************************
  * Evalboard revision E (blue PCB)

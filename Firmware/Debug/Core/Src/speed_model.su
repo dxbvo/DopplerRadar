@@ -1,0 +1,5 @@
+../Core/Src/speed_model.c:33:6:complex_fft	16	static
+../Core/Src/speed_model.c:43:6:get_magnitude	8	static
+../Core/Src/speed_model.c:53:10:get_max_index	16	static
+../Core/Src/speed_model.c:62:11:get_doppler_frequency	16	static
+../Core/Src/speed_model.c:76:11:calculate_speed	24	static

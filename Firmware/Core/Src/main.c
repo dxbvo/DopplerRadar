@@ -20,15 +20,17 @@
 #include "stm32f429i_discovery_lcd.h"
 #include "stm32f429i_discovery_ts.h"
 #include "arm_cfft_init_f32.h"
-#include <stdio.h>
-#include <stdlib.h>
-
 #include "main.h"
 #include "pushbutton.h"
 #include "menu.h"
 #include "measuring.h"
-#include <arm_math.h>
+#include "speed_model.h"
 
+#include <arm_math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <time.h>
 
 /******************************************************************************
  * Defines
@@ -40,18 +42,9 @@
 /******************************************************************************
  * Variables and Constants
  *****************************************************************************/
-arm_cfft_instance_f32 fftInstance;
 float32_t velocity;
-float32_t testArray[2*FFT_SIZE];
 float32_t testOutput[FFT_SIZE];
-
-// array for transfering data
-float32_t *maxVelocities = NULL;  	// Initialize array pointer to NULL
-int sizeOfMaxVelocities = 0;  						// Initialize size to 0
-
-float32_t testData[] = {
-		#include "testDataNegative.csv"
-};
+uint32_t max_index_pass;
 
 /******************************************************************************
  * Functions
@@ -98,53 +91,31 @@ int main(void) {
 	MEAS_GPIO_analog_init();			// Configure GPIOs in analog mode
 	MEAS_timer_init();					// Configure the timer
 
-    // Initialize the FFT instance
-    arm_cfft_init_f32(&fftInstance, FFT_SIZE);
+    // Timer configuration
+    int timer_duration = 20; // in seconds
+    time_t start_time = time(NULL);
+    time_t current_time = start_time;
+    char* time_string = ctime(&current_time);
 
 	/* Infinite while loop */
-	while (1) {							// Infinitely loop in main function
+	while (difftime(current_time, start_time) < timer_duration) {							// Infinitely loop in main function
 		BSP_LED_Toggle(LED3);			// Visual feedback when running
 
 		if (MEAS_data_ready) {			// Show data if new data available
 			MEAS_data_ready = false;
 
-		    // Perform the FFT, 0 indicates forward FFT, 1 enables bit reversal of output
-		    arm_cfft_f32(&fftInstance, cfft_inout, 0, 1);
+			complex_fft(cfft_inout);
 
-		    // magnitude calculation
-		    arm_cmplx_mag_f32(cfft_inout, testOutput, FFT_SIZE);
+			// Output stored in array testOutput
+			get_magnitude();
 
-		    // set DC value to 0 because we have an offset of 1.4V
-		    testOutput[0] = 0;
+			max_index_pass = get_max_index(testOutput);
 
-		    // get max value and corresponding index
-		    float32_t max_value;
-		    uint32_t max_index; // index at max value
-		    arm_max_f32(testOutput, FFT_SIZE, &max_value, &max_index);
+		    dopplerFrequency = get_doppler_frequency(max_index_pass);
 
-		    // Calculate Doppler frequency
-		    float32_t dopplerFrequency;
-		    // new cast
-		    dopplerFrequency = (float32_t)max_index * ADC_FS / FFT_SIZE;
-
-		    // check if dopplerFrequency is in the second Nyquist zone -> > fs/2
-		    if (dopplerFrequency > (ADC_FS / 2)) {
-		    	dopplerFrequency = dopplerFrequency - ADC_FS;
-		    }
-
-		    // Calculate velocity in m/s
-		    float32_t lambda = SPEED_OF_LIGHT / TRANSMIT_FREQUENCY;
-		    velocity = (dopplerFrequency*lambda) / 2.0f;
-
-		    // convert to m/s to km/h and round to accuracy +/- 0.3
-		    velocity = velocity*3.6;
-		    velocity = roundToAccuracy(velocity);
+		    velocity = calculate_speed(dopplerFrequency);
 
 		    MEAS_show_data();
-
-		    // append velocity to array
-		    maxVelocities = realloc(maxVelocities, (sizeOfMaxVelocities + 1) * sizeof(float32_t));  // Allocate memory for one more element
-		    maxVelocities[sizeOfMaxVelocities++] = velocity;
 
 		    // start measurement again
 			ADC1_IN13_ADC2_IN11_dual_init(); // ADC initialize
@@ -190,6 +161,10 @@ int main(void) {
 		}
 
 		HAL_Delay(200);					// Wait or sleep
+
+		// Update the current time
+	    printf("The current time is %s", time_string);
+		current_time = time(NULL);
 	}
 }
 

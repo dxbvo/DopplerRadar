@@ -30,11 +30,8 @@
 extern bool MEAS_data_ready;
 extern uint32_t MEAS_input_count;
 extern bool DAC_active;
-//extern int ADC_NUMS;
-
-// changed defined extern varibles
-//extern int32_t pad_left[ADC_NUMS], pad_right[ADC_NUMS], coil_left[ADC_NUMS], coil_right[ADC_NUMS];
-
+extern uint32_t ADC_samples[128];
+extern float32_t cfft_inout[128];
 
 /******************************************************************************
  * Functions
@@ -61,8 +58,7 @@ void DMA2_Stream4_IRQHandler(void);
 void MEAS_show_data(void);
 float32_t roundToAccuracy(float32_t);
 
-extern uint32_t ADC_samples[128];
-extern float32_t cfft_inout[128];
+
 
 
 #endif
