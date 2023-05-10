@@ -13,5 +13,6 @@ void get_magnitude(void);
 uint32_t get_max_index(float32_t*);
 float32_t get_doppler_frequency(uint32_t);
 float32_t calculate_speed(float32_t);
+int meanOfArray(float32_t*, int);
 
 #endif /* INC_SPEED_MODEL_H_ */

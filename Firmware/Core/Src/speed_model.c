@@ -22,6 +22,7 @@
 #define SPEED_OF_LIGHT 299792458.0
 #define TRANSMIT_FREQUENCY 24000000000.0
 #define FFT_SIZE 64
+#define THRESHOLD 300
 
 // Variables
 float32_t dopplerFrequency;
@@ -48,6 +49,15 @@ void get_magnitude(void) {
     // set DC value to 0 because we have an offset of 1.4V
     testOutput[0] = 0;
 
+    int size = 64;
+    int mean = meanOfArray(testOutput, size);
+
+    if(mean < THRESHOLD) {
+
+    	for(int i = 0; i < size; i++) {
+    		testOutput[i] = (float32_t) 0.0;
+    	}
+    }
 }
 
 uint32_t get_max_index(float32_t testOutput[]) {
@@ -85,4 +95,18 @@ float32_t calculate_speed(float32_t dopplerFrequency) {
 
     return velocity;
 
+}
+
+int meanOfArray(float32_t testOutput[], int size) {
+
+	int sum = 0;
+	int average = 0;
+
+	for(int i = 1; i < size ; i++) {
+		sum += testOutput[i];
+	}
+
+	average = sum / size;
+
+	return average;
 }

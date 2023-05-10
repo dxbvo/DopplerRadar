@@ -46,6 +46,8 @@ MENU_entry_t MENU_get_entry(const MENU_item_t item);
 void MENU_check_transition(void);
 MENU_item_t MENU_get_transition(void);
 
+extern int size;
+
 
 #endif
 

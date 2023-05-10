@@ -166,6 +166,7 @@ int main(void) {
 	    printf("The current time is %s", time_string);
 		current_time = time(NULL);
 	}
+	BSP_LED_Toggle(LED4);			// Visual feedback when running
 }
 
 
