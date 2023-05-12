@@ -22,13 +22,14 @@
 #define SPEED_OF_LIGHT 299792458.0
 #define TRANSMIT_FREQUENCY 24000000000.0
 #define FFT_SIZE 64
-#define THRESHOLD 300
+#define THRESHOLD 90
 
 // Variables
 float32_t dopplerFrequency;
 arm_cfft_instance_f32 fftInstance;
 float32_t max_value;
 uint32_t max_index; // index at max value
+extern float32_t HighVelocity = 0.0; // stores the highest Velocity
 
 // Functions
 void complex_fft(float32_t fft_input[]) {
@@ -83,6 +84,13 @@ float32_t get_doppler_frequency(uint32_t max_index) {
 
 }
 
+void update_high_velocity(float32_t velocity) {
+	if (velocity > HighVelocity) {
+		HighVelocity = velocity;
+	}
+}
+
+
 float32_t calculate_speed(float32_t dopplerFrequency) {
 
     // Calculate velocity in m/s
@@ -92,6 +100,9 @@ float32_t calculate_speed(float32_t dopplerFrequency) {
     // convert to m/s to km/h and round to accuracy +/- 0.3
     velocity = velocity*3.6;
     velocity = roundToAccuracy(velocity);
+
+    // Update the high velocity
+    update_high_velocity(velocity);
 
     return velocity;
 
@@ -109,4 +120,8 @@ int meanOfArray(float32_t testOutput[], int size) {
 	average = sum / size;
 
 	return average;
+
 }
+
+
+

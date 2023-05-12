@@ -1,6 +1,7 @@
-../Core/Src/speed_model.c:34:6:complex_fft	16	static
-../Core/Src/speed_model.c:44:6:get_magnitude	24	static
-../Core/Src/speed_model.c:63:10:get_max_index	16	static
-../Core/Src/speed_model.c:72:11:get_doppler_frequency	16	static
-../Core/Src/speed_model.c:86:11:calculate_speed	24	static
-../Core/Src/speed_model.c:100:5:meanOfArray	32	static
+../Core/Src/speed_model.c:35:6:complex_fft	16	static
+../Core/Src/speed_model.c:45:6:get_magnitude	24	static
+../Core/Src/speed_model.c:64:10:get_max_index	16	static
+../Core/Src/speed_model.c:73:11:get_doppler_frequency	16	static
+../Core/Src/speed_model.c:87:6:update_high_velocity	16	static
+../Core/Src/speed_model.c:94:11:calculate_speed	24	static
+../Core/Src/speed_model.c:111:5:meanOfArray	32	static

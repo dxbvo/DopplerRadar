@@ -339,6 +339,7 @@ void DMA2_Stream4_IRQHandler(void)
 void MEAS_show_data(void) {
 
 	float32_t v = velocity;
+	extern float32_t HighVelocity;
 	const uint32_t Y_OFFSET = 260;
 	const uint32_t X_SIZE = 240;
 
@@ -354,11 +355,19 @@ void MEAS_show_data(void) {
 	BSP_LCD_SetBackColor(LCD_COLOR_WHITE);
 	BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
 	char text[50];
-	snprintf(text, 50, "velocity: %.1f km/h", v);
+	snprintf(text, 50, "Velocity: %.1f km/h", v);
+	BSP_LCD_DisplayStringAt(0, 20, (uint8_t *)text, CENTER_MODE);
+
+	// show HighScore
+	snprintf(text, 50, "HighScore: %.1f km/h", HighVelocity);
 	BSP_LCD_DisplayStringAt(0, 50, (uint8_t *)text, CENTER_MODE);
 
+
 	snprintf(text, 50, "I: blue, Q: red");
-	BSP_LCD_DisplayStringAt(0, 70, (uint8_t *)text, CENTER_MODE);
+	BSP_LCD_DisplayStringAt(0, 150, (uint8_t *)text, CENTER_MODE);
+
+	snprintf(text, 50, "FFT Magnitude: green");
+	BSP_LCD_DisplayStringAt(0, 200, (uint8_t *)text, CENTER_MODE);
 
 
 	/* Draw the  values of input channel 1 as a curve */
