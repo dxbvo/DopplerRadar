@@ -1,0 +1,5 @@
+uart.c:25:6:debugPrintStrUSART1	1
+uart.c:29:6:debugPrintByteUSART1	1
+uart.c:33:6:debugPrintHexDumpUSART1	2
+uart.c:42:6:uartSendData	2
+uart.c:49:6:uart_init	1

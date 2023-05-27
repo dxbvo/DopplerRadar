@@ -359,14 +359,14 @@ void MEAS_show_data(void) {
 	BSP_LCD_DisplayStringAt(0, 20, (uint8_t *)text, CENTER_MODE);
 
 	// show HighScore
-	snprintf(text, 50, "HighScore: %.1f km/h", HighVelocity);
+	snprintf(text, 50, "Highscore: %.1f km/h", HighVelocity);
 	BSP_LCD_DisplayStringAt(0, 50, (uint8_t *)text, CENTER_MODE);
 
 
 	snprintf(text, 50, "I: blue, Q: red");
 	BSP_LCD_DisplayStringAt(0, 150, (uint8_t *)text, CENTER_MODE);
 
-	snprintf(text, 50, "FFT Magnitude: green");
+	snprintf(text, 50, "FFT magnitude: green");
 	BSP_LCD_DisplayStringAt(0, 200, (uint8_t *)text, CENTER_MODE);
 
 
@@ -399,9 +399,6 @@ void MEAS_show_data(void) {
 		if (data > Y_OFFSET) { data = Y_OFFSET; } // Limit value, prevent crash
 		BSP_LCD_DrawLine(3*(i-1), Y_OFFSET-data_last, 3*i, Y_OFFSET-data);
 	}
-
-
-
 }
 
 //	/* Clear buffer and flag */

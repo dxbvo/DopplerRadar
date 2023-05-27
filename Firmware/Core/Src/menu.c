@@ -64,8 +64,7 @@ static MENU_entry_t MENU_entry[MENU_ENTRY_COUNT] = {
  * Text and background colors are applied.
  * @n These attributes are defined in the variable MENU_draw[].
  *****************************************************************************/
-void MENU_draw(void)
-{
+void MENU_draw(void) {
 	BSP_LCD_SetFont(MENU_FONT);
 	uint32_t x, y, m, w, h;
 	y = MENU_Y;
@@ -79,17 +78,15 @@ void MENU_draw(void)
 		BSP_LCD_SetBackColor(MENU_entry[i].back_color);
 		BSP_LCD_SetTextColor(MENU_entry[i].text_color);
 		BSP_LCD_DisplayStringAt(x+3*m, y+3*m,(uint8_t *)MENU_entry[i].line1, CENTER_MODE);
-//		BSP_LCD_DisplayStringAt(x+3*m, y+h/2,(uint8_t *)MENU_entry[i].line2, LEFT_MODE);
+		// BSP_LCD_DisplayStringAt(x+3*m, y+h/2,(uint8_t *)MENU_entry[i].line2, LEFT_MODE);
 	}
 }
-
 
 /** ***************************************************************************
  * @brief Shows a hint at startup.
  *
  *****************************************************************************/
-void MENU_hint(void)
-{
+void MENU_hint(void) {
 	BSP_LCD_SetBackColor(LCD_COLOR_WHITE);
 	BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
 	BSP_LCD_SetFont(&Font24);
@@ -97,10 +94,6 @@ void MENU_hint(void)
 	BSP_LCD_SetFont(&Font16);
 	BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Press \"start\" button", LEFT_MODE);
 	BSP_LCD_DisplayStringAt(5, 80, (uint8_t *)"to start measurement", LEFT_MODE);
-//	BSP_LCD_DisplayStringAt(5, 110, (uint8_t *)"Switch DAC on/off", LEFT_MODE);
-//	BSP_LCD_DisplayStringAt(5, 130, (uint8_t *)"with blue pushbutton", LEFT_MODE);
-//	BSP_LCD_DisplayStringAt(5, 160, (uint8_t *)"(c) hhrt@zhaw.ch", LEFT_MODE);
-//	BSP_LCD_DisplayStringAt(5, 160, (uint8_t *)"Version 27.09.2022", LEFT_MODE);
 }
 
 

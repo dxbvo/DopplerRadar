@@ -1,5 +1,7 @@
-speed_model.c:33:6:complex_fft	1
-speed_model.c:43:6:get_magnitude	1
-speed_model.c:53:10:get_max_index	1
-speed_model.c:62:11:get_doppler_frequency	2
-speed_model.c:76:11:calculate_speed	1
+speed_model.c:35:6:complex_fft	1
+speed_model.c:45:6:get_magnitude	3
+speed_model.c:67:10:get_max_index	1
+speed_model.c:76:11:get_doppler_frequency	2
+speed_model.c:90:6:update_high_velocity	2
+speed_model.c:96:11:calculate_speed	1
+speed_model.c:113:5:meanOfArray	2

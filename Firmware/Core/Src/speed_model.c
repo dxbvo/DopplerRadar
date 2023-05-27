@@ -93,7 +93,6 @@ void update_high_velocity(float32_t velocity) {
 	}
 }
 
-
 float32_t calculate_speed(float32_t dopplerFrequency) {
 
     // Calculate velocity in m/s
@@ -125,6 +124,7 @@ int meanOfArray(float32_t testOutput[], int size) {
 	return average;
 
 }
+
 
 
 

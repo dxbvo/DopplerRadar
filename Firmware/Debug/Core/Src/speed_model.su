@@ -3,5 +3,5 @@
 ../Core/Src/speed_model.c:67:10:get_max_index	16	static
 ../Core/Src/speed_model.c:76:11:get_doppler_frequency	16	static
 ../Core/Src/speed_model.c:90:6:update_high_velocity	16	static
-../Core/Src/speed_model.c:97:11:calculate_speed	24	static
-../Core/Src/speed_model.c:114:5:meanOfArray	32	static
+../Core/Src/speed_model.c:96:11:calculate_speed	24	static
+../Core/Src/speed_model.c:113:5:meanOfArray	32	static

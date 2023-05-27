@@ -25,6 +25,8 @@
 #include "menu.h"
 #include "measuring.h"
 #include "speed_model.h"
+#include "uart.h"
+#include "stm32f4xx_hal_uart.h"
 
 #include <arm_math.h>
 #include <stdio.h>
@@ -45,7 +47,6 @@
 float32_t velocity;
 float32_t testOutput[FFT_SIZE];
 uint32_t max_index_pass;
-
 
 /******************************************************************************
  * Functions
@@ -92,6 +93,11 @@ int main(void) {
 	MEAS_GPIO_analog_init();			// Configure GPIOs in analog mode
 	MEAS_timer_init();					// Configure the timer
 
+	// UART
+	uart_init();
+	debugPrintStrUSART1("This is a test \n another line");
+
+
     // Timer configuration
     int timer_duration = 20; // in seconds
     time_t start_time = time(NULL);
@@ -122,6 +128,9 @@ int main(void) {
 			ADC1_IN13_ADC2_IN11_dual_init(); // ADC initialize
 			ADC1_IN13_ADC2_IN11_dual_start(); // start sampling
 			DMA2_Stream4_IRQHandler(); // write samples in ADC_samples
+
+			debugPrintStrUSART1("This is a test \r\n another line");
+
 
 		}
 

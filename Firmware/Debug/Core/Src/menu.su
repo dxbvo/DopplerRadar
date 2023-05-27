@@ -1,7 +1,7 @@
 ../Core/Src/menu.c:67:6:MENU_draw	40	static
-../Core/Src/menu.c:91:6:MENU_hint	8	static
-../Core/Src/menu.c:114:6:MENU_set_entry	24	static
-../Core/Src/menu.c:127:14:MENU_get_entry	64	static
-../Core/Src/menu.c:146:13:MENU_get_transition	16	static
-../Core/Src/menu.c:164:6:MENU_check_transition	16	static
-../Core/Src/menu.c:224:6:EXTI15_10_IRQHandler	8	static
+../Core/Src/menu.c:89:6:MENU_hint	8	static
+../Core/Src/menu.c:107:6:MENU_set_entry	24	static
+../Core/Src/menu.c:120:14:MENU_get_entry	64	static
+../Core/Src/menu.c:139:13:MENU_get_transition	16	static
+../Core/Src/menu.c:157:6:MENU_check_transition	16	static
+../Core/Src/menu.c:217:6:EXTI15_10_IRQHandler	8	static

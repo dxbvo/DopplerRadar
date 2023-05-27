@@ -82,8 +82,8 @@ all: main-build
 main-build: Firmware.elf secondary-outputs
 
 # Tool invocations
-Firmware.elf Firmware.map: $(OBJS) $(USER_OBJS) D:\Elektrotechnik_Studium\new_Git_Doppler_Radar\DopplerRadar\Firmware\STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Firmware.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Elektrotechnik_Studium\new_Git_Doppler_Radar\DopplerRadar\Firmware\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Firmware.map" -Wl,--gc-sections -static -L../Drivers/CMSIS/Lib/GCC -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Firmware.elf Firmware.map: $(OBJS) $(USER_OBJS) /Users/diegobelusky/Documents/Electronics\ Project\ 2/Firmware/STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Firmware.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/diegobelusky/Documents/Electronics Project 2/Firmware/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Firmware.map" -Wl,--gc-sections -static -L../Drivers/CMSIS/Lib/GCC -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

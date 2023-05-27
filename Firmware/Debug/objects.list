@@ -6,6 +6,7 @@
 "./Core/Src/speed_model.o"
 "./Core/Src/stm32f4xx_it.o"
 "./Core/Src/system_stm32f4xx.o"
+"./Core/Src/uart.o"
 "./Core/Startup/startup_stm32f429zitx.o"
 "./Drivers/BSP/Components/cs43l22/cs43l22.o"
 "./Drivers/BSP/Components/exc7200/exc7200.o"
