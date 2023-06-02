@@ -2,4 +2,4 @@
 ../Core/Src/uart.c:29:6:debugPrintByteUSART1	16	static
 ../Core/Src/uart.c:33:6:debugPrintHexDumpUSART1	24	static
 ../Core/Src/uart.c:42:6:uartSendData	24	static
-../Core/Src/uart.c:49:6:uart_init	40	static
+../Core/Src/uart.c:48:6:uart_init	40	static
